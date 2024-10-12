@@ -1,54 +1,90 @@
 import React from 'react'
 import Hero from '@/app/components/Hero'
+import Link from 'next/link'
+import AboutMe from '@/app/components/AboutMe'
 import { Button } from '@/app/components/ui/button'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/app/components/ui/card'
+import { User, BookOpen, Briefcase, Code, FileText } from 'lucide-react'
 
 const HomePage = () => {
   return (
     <div>
-      <Hero />
+      <Hero />       
       
-      <section id="about" className="py-20 bg-gray-100">
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">About Me</h2>
-          <p className="text-lg mb-4">
-            With a passion for exploring different fields, I've developed expertise in project management,
-            supramolecular chemistry, computer science, and QA Automation testing.
-          </p>
-          <p className="text-lg mb-4">
-            Currently, I'm focusing my learning journey on QA Automation testing and .NET development.
-          </p>
-          <Button variant="outline" className="mt-4">Learn More</Button>
-        </div>
-      </section>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <User className="mr-2" /> About Me
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Passionate developer with expertise in multiple fields, focusing on QA Automation and .NET development.</p>
+              </CardContent>
+              <CardFooter>
+                <Button variant="outline" asChild>
+                  <Link href="/about">Learn More</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <BookOpen className="mr-2" /> Education
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Continuous learner with a strong academic background in various disciplines.</p>
+              </CardContent>
+              <CardFooter>
+                <Button variant="outline">View Education</Button>
+              </CardFooter>
+            </Card>
 
-      <section id="experience" className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">Experience</h2>
-          <p className="text-lg mb-4">
-            With over 15 years of experience, I've brought to life diverse projects, focused on
-            optimizing efficiency and tackling a wide array of business challenges.
-          </p>
-          <Button variant="outline" className="mt-4">View My Experience</Button>
-        </div>
-      </section>
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Briefcase className="mr-2" /> Experience
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Over 15 years of experience in bringing diverse projects to life and optimizing efficiency.</p>
+              </CardContent>
+              <CardFooter>
+                <Button variant="outline">View Experience</Button>
+              </CardFooter>
+            </Card>
 
-      <section id="projects" className="py-20 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">Projects</h2>
-          <p className="text-lg mb-4">
-            Here you can find a selection of my most recent and impactful projects.
-          </p>
-          <Button variant="outline" className="mt-4">Explore Projects</Button>
-        </div>
-      </section>
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Code className="mr-2" /> Projects
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>A showcase of my most recent and impactful projects across various domains.</p>
+              </CardContent>
+              <CardFooter>
+                <Button variant="outline">Explore Projects</Button>
+              </CardFooter>
+            </Card>
 
-      <section id="skills" className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">Skills</h2>
-          <p className="text-lg mb-4">
-            My diverse skill set includes project management, QA automation, .NET development, and more.
-          </p>
-          <Button variant="outline" className="mt-4">View All Skills</Button>
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <FileText className="mr-2" /> Publications
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>My contributions to academic and professional publications in various fields.</p>
+              </CardContent>
+              <CardFooter>
+                <Button variant="outline">View Publications</Button>
+              </CardFooter>
+            </Card>
+          </div>
         </div>
       </section>
     </div>
