@@ -1,5 +1,9 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/app/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app/components/ui/tabs';
+import { Badge } from '@/app/components/ui/badge';
+import { ScrollArea } from '@/app/components/ui/scroll-area';
+import { ChevronRight, GraduationCap, Award, BookOpen } from 'lucide-react';
 
 type Education = {
   degree: string;
@@ -73,42 +77,85 @@ const trainings: Training[] = [
 const EducationSection: React.FC = () => {
   return (
     <div className="space-y-8">
-      <h1 className="text-3xl font-bold">📚 Education</h1>
+      <h1 className="text-4xl font-bold text-center mb-10">My Educational Journey</h1>
       
-      <div className="space-y-6">
-        {educationData.map((edu, index) => (
-          <Card key={index}>
+      <Tabs defaultValue="education" className="w-full">
+        <TabsList className="grid w-full grid-cols-3">
+          <TabsTrigger value="education" className="flex items-center"><GraduationCap className="mr-2" />Education</TabsTrigger>
+          <TabsTrigger value="honors" className="flex items-center"><Award className="mr-2" />Honors</TabsTrigger>
+          <TabsTrigger value="trainings" className="flex items-center"><BookOpen className="mr-2" />Trainings</TabsTrigger>
+        </TabsList>
+        
+        <TabsContent value="education">
+          <div className="grid gap-6 md:grid-cols-2">
+            {educationData.map((edu, index) => (
+              <Card key={index} className="overflow-hidden transition-shadow hover:shadow-lg">
+                <CardHeader className="bg-gradient-to-r from-blue-500 to-purple-500 text-white">
+                  <CardTitle className="text-xl flex items-center">
+                    <GraduationCap className="mr-2" />
+                    {edu.degree}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-6">
+                  <p className="font-semibold text-lg mb-2">{edu.area}</p>
+                  <p>
+                    <a href={edu.universityUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline flex items-center">
+                      {edu.university} <ChevronRight className="ml-1" size={16} />
+                    </a>
+                  </p>
+                  {edu.department && <p className="text-gray-600">{edu.department}</p>}
+                  <Badge variant="secondary" className="mt-4">{edu.period}</Badge>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </TabsContent>
+        
+        <TabsContent value="honors">
+          <Card>
             <CardHeader>
-              <CardTitle className="text-xl">🎓 {edu.degree}</CardTitle>
+              <CardTitle>Academic Honors and Awards</CardTitle>
             </CardHeader>
             <CardContent>
-              <p><strong>Area:</strong> {edu.area}</p>
-              <p><strong>University:</strong> <a href={edu.universityUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">{edu.university}</a></p>
-              {edu.department && <p><strong>Department:</strong> {edu.department}</p>}
-              <p><strong>Period:</strong> {edu.period}</p>
+              <ScrollArea className="h-[400px] w-full rounded-md border p-4">
+                <ul className="space-y-4">
+                  {honors.map((honor, index) => (
+                    <li key={index} className="flex items-start">
+                      <Award className="mr-2 flex-shrink-0 text-yellow-500" />
+                      <span>{honor}</span>
+                    </li>
+                  ))}
+                </ul>
+              </ScrollArea>
             </CardContent>
           </Card>
-        ))}
-      </div>
-
-      <h2 className="text-2xl font-bold mt-8">🏆 Honors</h2>
-      <ul className="list-disc pl-5 space-y-2">
-        {honors.map((honor, index) => (
-          <li key={index}>{honor}</li>
-        ))}
-      </ul>
-
-      <h2 className="text-2xl font-bold mt-8">📜 Trainings and Certifications</h2>
-      {trainings.map((training, index) => (
-        <div key={index} className="mt-4">
-          <h3 className="text-xl font-semibold">{training.year}</h3>
-          <ul className="list-disc pl-5 space-y-1">
-            {training.items.map((item, itemIndex) => (
-              <li key={itemIndex}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
+        </TabsContent>
+        
+        <TabsContent value="trainings">
+          <Card>
+            <CardHeader>
+              <CardTitle>Professional Development</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ScrollArea className="h-[400px] w-full rounded-md border p-4">
+                {trainings.map((training, index) => (
+                  <div key={index} className="mb-6">
+                    <h3 className="text-xl font-semibold mb-2">{training.year}</h3>
+                    <ul className="space-y-2">
+                      {training.items.map((item, itemIndex) => (
+                        <li key={itemIndex} className="flex items-start">
+                          <BookOpen className="mr-2 flex-shrink-0 text-green-500" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </ScrollArea>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
     </div>
   );
 };
