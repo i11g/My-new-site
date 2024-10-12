@@ -9,12 +9,11 @@ import { User, BookOpen, Briefcase, Code, FileText } from 'lucide-react'
 const HomePage = () => {
   return (
     <div>
-      <Hero />       
-      
+      <Hero />        
       <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Card>
+      <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <User className="mr-2" /> About Me
