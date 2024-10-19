@@ -7,6 +7,7 @@ import About from '@/app/components/About'
 import Education from '@/app/components/Education';
 import Experience from '@/app/components/Experience';
 import Projects from '@/app/components/Projects';
+import Publications from '@/app/components/Publications';
 
 const HomePage = () => {
   return (
@@ -28,6 +29,7 @@ const HomePage = () => {
         <Education />
         <Experience />
         <Projects />
+        <Publications />
         {/* Content Sections */}             
          
         <section id="projects" className="py-20">
