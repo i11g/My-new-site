@@ -26,8 +26,7 @@ const HomePage = () => {
         <About />
         <Education />
         <Experience />
-        {/* Content Sections */}    
-          
+        {/* Content Sections */}             
          
         <section id="projects" className="py-20">
           <div className="container mx-auto px-4">
