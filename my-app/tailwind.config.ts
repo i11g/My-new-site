@@ -6,7 +6,14 @@ module.exports = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
+  safelist: [
+    'animate-fade-in',
+    'animate-fade-in-down',
+    'animate-fade-in-up',
+    'animation-delay-500',
+    'animation-delay-1000',
+  ],
   theme: {
     container: {
       center: true,
@@ -65,10 +72,25 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        "fade-in": {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        "fade-in-down": {
+          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        "fade-in-up": {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 1s ease-out",
+        "fade-in-down": "fade-in-down 1s ease-out",
+        "fade-in-up": "fade-in-up 1s ease-out",
       },
     },
   },
