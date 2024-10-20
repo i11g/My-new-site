@@ -1,88 +1,114 @@
-import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/app/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app/components/ui/tabs';
-import { Badge } from '@/app/components/ui/badge';
+import React from 'react'
+import { GraduationCap, Award, BookOpen } from 'lucide-react'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/components/ui/tabs"
+import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/card"
 import { ScrollArea } from '@/app/components/ui/scroll-area';
-import { ChevronRight, GraduationCap, Award, BookOpen } from 'lucide-react';
 
-type Education = {
-  degree: string;
-  area: string;
-  university: string;
-  universityUrl: string;
-  department?: string;
-  period: string;
-};
+const Education = () => {
+  const educationData = [
+    {
+      degree: "Ph.D. in Physical Science",
+      area: "Supramolecular Chemistry",
+      university: "The University of Iowa",
+      universityUrl: "https://uiowa.edu/",
+      department: "Department of Chemistry",
+      period: "2003 - 2007"
+    },
+    {
+      degree: "Ph.D. in Physical Science",
+      area: "Supramolecular Chemistry",
+      university: "The University of Iowa",
+      universityUrl: "https://uiowa.edu/",
+      department: "Department of Chemistry",
+      period: "2003 - 2007"
+    },
+    {
+      degree: "Ph.D. in Physical Science",
+      area: "Supramolecular Chemistry",
+      university: "The University of Iowa",
+      universityUrl: "https://uiowa.edu/",
+      department: "Department of Chemistry",
+      period: "2003 - 2007"
+    },
+    {
+      degree: "Ph.D. in Physical Science",
+      area: "Supramolecular Chemistry",
+      university: "The University of Iowa",
+      universityUrl: "https://uiowa.edu/",
+      department: "Department of Chemistry",
+      period: "2003 - 2007"
+    },
+    {
+      degree: "Ph.D. in Physical Science",
+      area: "Supramolecular Chemistry",
+      university: "The University of Iowa",
+      universityUrl: "https://uiowa.edu/",
+      department: "Department of Chemistry",
+      period: "2003 - 2007"
+    },
+    
+  ]
 
-type Honor = string;
+  type Honor = string;
 
-type Training = {
+  type Training = {
   year: number;
   items: string[];
-};
+   }; 
 
-const educationData: Education[] = [
-  {
-    degree: "Ph.D. in Physical Science",
-    area: "Supramolecular Chemistry",
-    university: "The University of Iowa",
-    universityUrl: "https://uiowa.edu/",
-    department: "Department of Chemistry",
-    period: "2003 - 2007"
-  },
-  // ... (other education entries)
-];
+   const honors: Honor[] = [
+    "Vice President of Missouri State University ACS Student Affiliate Chapter/Chemistry Honors Society",
+    // ... (other honors)
+  ];
+  
+  const trainings: Training[] = [
+    { year: 2021, items: ["New Service Vision Model - Anastasia Vladychynska Consulting"] },
+    // ... (other trainings)
+  ];
 
-const honors: Honor[] = [
-  "Vice President of Missouri State University ACS Student Affiliate Chapter/Chemistry Honors Society",
-  // ... (other honors)
-];
-
-const trainings: Training[] = [
-  { year: 2021, items: ["New Service Vision Model - Anastasia Vladychynska Consulting"] },
-  // ... (other trainings)
-];
-
-const Education: React.FC = () => {
   return (
     <section id="education" className="py-20">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-10">My Educational Journey</h1>
-        
+        <h2 className="text-4xl font-bold text-center mb-10 text-white">My Educational Journey</h2>
         <Tabs defaultValue="education" className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="education" className="flex items-center"><GraduationCap className="mr-2" />Education</TabsTrigger>
-            <TabsTrigger value="honors" className="flex items-center"><Award className="mr-2" />Honors</TabsTrigger>
-            <TabsTrigger value="trainings" className="flex items-center"><BookOpen className="mr-2" />Trainings</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-3 bg-white">
+            <TabsTrigger value="education" className="text-purple-900 data-[state=active]:bg-purple-100">
+              <GraduationCap className="mr-2 h-4 w-4" />
+              Education
+            </TabsTrigger>
+            <TabsTrigger value="honors" className="text-purple-900 data-[state=active]:bg-purple-100">
+              <Award className="mr-2 h-4 w-4" />
+              Honors
+            </TabsTrigger>
+            <TabsTrigger value="trainings" className="text-purple-900 data-[state=active]:bg-purple-100">
+              <BookOpen className="mr-2 h-4 w-4" />
+              Trainings
+            </TabsTrigger>
           </TabsList>
-          
           <TabsContent value="education">
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {educationData.map((edu, index) => (
-                <Card key={index} className="overflow-hidden transition-shadow hover:shadow-lg">
-                  <CardHeader className="bg-gradient-to-r from-blue-500 to-purple-500 text-white">
-                    <CardTitle className="text-xl flex items-center">
+                <Card key={index} className="bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-semibold flex items-center">
                       <GraduationCap className="mr-2" />
                       {edu.degree}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="p-6">
-                    <p className="font-semibold text-lg mb-2">{edu.area}</p>
-                    <p>
-                      <a href={edu.universityUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline flex items-center">
-                        {edu.university} <ChevronRight className="ml-1" size={16} />
-                      </a>
-                    </p>
-                    {edu.department && <p className="text-gray-600">{edu.department}</p>}
-                    <Badge variant="secondary" className="mt-4">{edu.period}</Badge>
+                  <CardContent>
+                    <p className="font-medium">{edu.area}</p>
+                    <a href={edu.universityUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                      {edu.university}
+                    </a>
+                    <p>{edu.department}</p>
+                    <p className="text-sm text-gray-600">{edu.period}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
-          </TabsContent>
-          
+          </TabsContent>          
           <TabsContent value="honors">
-            <Card>
+            <Card className="bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300">
               <CardHeader>
                 <CardTitle>Academic Honors and Awards</CardTitle>
               </CardHeader>
@@ -99,10 +125,9 @@ const Education: React.FC = () => {
                 </ScrollArea>
               </CardContent>
             </Card>
-          </TabsContent>
-          
+          </TabsContent>          
           <TabsContent value="trainings">
-            <Card>
+            <Card className="bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300">
               <CardHeader>
                 <CardTitle>Professional Development</CardTitle>
               </CardHeader>
@@ -128,7 +153,7 @@ const Education: React.FC = () => {
         </Tabs>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Education;
+export default Education

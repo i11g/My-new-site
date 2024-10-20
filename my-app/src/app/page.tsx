@@ -11,32 +11,32 @@ const HomePage = () => {
     <div className="min-h-screen bg-gradient-to-br from-purple-900 to-blue-900 text-white">
       {/* Hero Section */}
       <section className="h-screen flex flex-col items-center justify-center">
-        <div className="text-center max-w-4xl mx-auto px-4">
-          <h1 className="text-6xl font-bold mb-4 opacity-0 animate-fade-in-down">
+        <div className="text-center max-w-5xl mx-auto px-8"> {/* Increased max-width */}
+          <h1 className="text-7xl font-bold mb-6 opacity-0 animate-fade-in-down"> {/* Increased font size and margin */}
             Hey, I'm Ivan.
           </h1>
-          <h2 className="text-4xl mb-6 opacity-0 animate-fade-in-up animation-delay-500">
-            I build projects, I make cool things.
+          <h2 className="text-5xl mb-8 opacity-0 animate-fade-in-up animation-delay-500"> {/* Increased font size and margin */}
+            I build projects and make cool things.
           </h2>
           
-          <p className="text-xl mb-8 opacity-0 animate-fade-in animation-delay-1000">
+          <p className="text-2xl mb-64 opacity-0 animate-fade-in animation-delay-1000"> {/* Increased font size and margin */}
             Entrepreneurial guy working on projects development, focused on optimizing efficiency and tackling a wide array of business challenges.
             Building big ideas.
           </p>
           
           {/* Social Icons */}
-          <div className="flex justify-center items-center space-x-6 opacity-0 animate-fade-in animation-delay-1000">
+          <div className="flex justify-center items-center space-x-8 opacity-0 animate-fade-in animation-delay-1000"> {/* Increased space between icons */}
             <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-all duration-300 ease-in-out">
-              <Linkedin size={24} />
+              <Linkedin size={24} /> {/* Increased icon size */}
             </a>
             <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-all duration-300 ease-in-out">
-              <Github size={24} />
+              <Github size={24} /> {/* Increased icon size */}
             </a>
             <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-300 transition-all duration-300 ease-in-out">
-              <Twitter size={24} />
+              <Twitter size={24} /> {/* Increased icon size */}
             </a>
             <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-400 transition-all duration-300 ease-in-out">
-              <Instagram size={24} />
+              <Instagram size={24} /> {/* Increased icon size */}
             </a>
           </div>
         </div>

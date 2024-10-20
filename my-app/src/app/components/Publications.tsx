@@ -6,31 +6,26 @@ import { BookOpen, FileText, Mic, Presentation } from 'lucide-react';
 
 const Publications: React.FC = () => {
   return (
-    <section id="publications" className="py-20">
+    <section id="publications" className="pt-20 pb-20">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-10">📝 Publications</h1>
 
         <Tabs defaultValue="book" className="w-full">
           <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="book" className="flex items-center"><BookOpen className="mr-2" />Book Chapter</TabsTrigger>
-            <TabsTrigger value="articles" className="flex items-center"><FileText className="mr-2" />Articles</TabsTrigger>
+            <TabsTrigger value="articles" className="flex items-center"><FileText className="mr-2" />Book Chapter&Articles</TabsTrigger>
             <TabsTrigger value="oral" className="flex items-center"><Mic className="mr-2" />Oral Presentations</TabsTrigger>
             <TabsTrigger value="poster" className="flex items-center"><Presentation className="mr-2" />Poster Presentations</TabsTrigger>
           </TabsList>
 
-          <TabsContent value="book">
-            <Card>
-              <CardHeader>
+          
+          <TabsContent value="articles">
+            <Card> 
+            <CardHeader>
                 <CardTitle>Book Chapter</CardTitle>
               </CardHeader>
               <CardContent>
                 <p>"Metal-organic frameworks with photochemical building units", in <em>Metal-Organic Frameworks: Design and Application</em>, Wiley-VCH, 2011, 301-312; Sumrak, J.C.; Georgiev, I.G.; MacGillivray, L.R.</p>
               </CardContent>
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="articles">
-            <Card>
               <CardHeader>
                 <CardTitle>Articles</CardTitle>
               </CardHeader>

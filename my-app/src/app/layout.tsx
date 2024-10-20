@@ -18,10 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>
-        <div className="flex flex-col min-h-screen">
-          <Header />
-          <main className="flex-grow bg-gradient-to-br from-purple-900 to-blue-900 text-white">
+      <body className={inter.className}>             
+        <Header />
+        <div className="min-h-screen bg-gradient-to-br from-purple-900 to-blue-900">
+          <main className="text-white">
             {children}
           </main>
         </div>
