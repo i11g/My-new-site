@@ -1,9 +1,9 @@
 "use client"
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/app/components/ui/card';
+import { Card, CardContent } from '@/app/components/ui/card';
 import { ScrollArea } from '@/app/components/ui/scroll-area';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app//components/ui/tabs';
-import { Rocket, Building, Archive, Warehouse, Users, PaintBucket, ShoppingCart, PieChart } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app/components/ui/tabs';
+import { Rocket, Building, Archive, Warehouse } from 'lucide-react';
 
 type Project = {
   title: string;
@@ -21,7 +21,7 @@ const projectsData: Project[] = [
       "Focus: Development of new modern and flexible work environment for all HQ teams",
       "Net Area: 13,800 sq.m., spanning across four HQ buildings"
     ],
-    image: "/api/placeholder/400/300",
+    image: "/images/workplace-project",
     category: "Business"
   },
   {
@@ -32,10 +32,30 @@ const projectsData: Project[] = [
       "Number of FTE: 500",
       "Reconstructed Area: 3,800 sq.m."
     ],
-    image: "/api/placeholder/400/300",
-    category: "IT"
+    image: "/Profile",
+    category: "Business"
   },
-  // ... Add the rest of your projects here, including the category and image for each
+  {
+    title: "Centralization of DSK Bank archiving processes and documents",
+    icon: <Archive className="mr-2" />,
+    details: [
+      "Objective: Design and implementation of centralized process for archive management aiming process optimization, digitalization, and efficiency",
+      "Project Scope: Over of 1,000,000 documents and 300 non-centralized archives",
+      "Project Goals: Development of centralized process of archive management"
+    ],
+    image: "/api/placeholder/400/300",
+    category: "Business"
+  },
+  {
+    title: "Construction of DSK Bank Centralized Warehouse",
+    icon: <Warehouse className="mr-2" />,
+    details: [
+      "Project Scope: Development of modern and automated central warehouse for close to 800,000 documents with office part for 30 FTE starting from scratch",
+      "Development Area: 2,700 sq.m."
+    ],
+    image: "/api/placeholder/400/300",
+    category: "Business"
+  },
 ];
 
 const Projects: React.FC = () => {
@@ -44,41 +64,45 @@ const Projects: React.FC = () => {
   const categories = ['Business', 'IT', 'Chemistry'];
 
   return (
-    <section id="projects" className="pt-32 pb-20">
+    <section id="projects" className="pt-32 pb-20 bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-10">🚀 Projects</h1>
+        <h1 className="text-4xl font-bold text-center mb-10 text-white flex items-center justify-center">
+          <Rocket className="mr-2" /> Projects
+        </h1>
         
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
+          <TabsList className="w-full flex mb-6 bg-white rounded-lg overflow-x-auto">
             {categories.map((category) => (
-              <TabsTrigger key={category} value={category}>{category}</TabsTrigger>
+              <TabsTrigger 
+                key={category} 
+                value={category}
+                className="flex-1 py-2 px-4 text-[#5F3BB2] hover:bg-purple-100 data-[state=active]:bg-purple-200"
+              >
+                {category}
+              </TabsTrigger>
             ))}
           </TabsList>
           {categories.map((category) => (
             <TabsContent key={category} value={category}>
-              <ScrollArea className="h-[600px] w-full rounded-md border p-4">
-                <div className="space-y-8">
+              <ScrollArea className="h-[75vh] w-full rounded-md pr-4">
+                <div className="space-y-4">
                   {projectsData
                     .filter((project) => project.category === category)
                     .map((project, index) => (
-                      <Card key={index} className="overflow-hidden transition-shadow hover:shadow-lg bg-gradient-to-br from-purple-900 to-blue-900 text-white">
-                        <div className="flex">
-                          <div className="flex-grow">
-                            <CardHeader>
-                              <CardTitle className="text-xl flex items-center">
-                                {project.icon}
-                                {project.title}
-                              </CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                              <ul className="list-disc list-inside space-y-2">
-                                {project.details.map((detail, detailIndex) => (
-                                  <li key={detailIndex}>{detail}</li>
-                                ))}
-                              </ul>
-                            </CardContent>
+                      <Card key={index} className="overflow-hidden bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300">
+                        <div className="flex flex-col md:flex-row">
+                          <div className="flex-grow p-4">
+                            <h3 className="text-xl font-semibold flex items-center mb-2">
+                              {project.icon}
+                              {project.title}
+                            </h3>
+                            <ul className="list-disc list-inside space-y-1 text-sm">
+                              {project.details.map((detail, detailIndex) => (
+                                <li key={detailIndex}>{detail}</li>
+                              ))}
+                            </ul>
                           </div>
-                          <div className="w-1/3 p-4">
+                          <div className="w-full md:w-1/3 p-4">
                             <img src={project.image} alt={project.title} className="w-full h-full object-cover rounded" />
                           </div>
                         </div>

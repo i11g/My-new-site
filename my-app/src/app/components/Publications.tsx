@@ -6,16 +6,15 @@ import { BookOpen, FileText, Mic, Presentation } from 'lucide-react';
 
 const Publications: React.FC = () => {
   return (
-    <section id="publications" className="pt-20 pb-20">
+    <section id="publications" className="pt-20 pb-20 ">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-10">📝 Publications</h1>
-
-        <Tabs defaultValue="articles" className="w-full">
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="articles" className="flex items-center">
+        <Tabs defaultValue="articles" className="w-full text-purple-900 data-[state=active]:bg-purple-100">
+          <TabsList className="grid w-full grid-cols-2 text-purple-900 data-[state=active]:bg-purple-100">
+            <TabsTrigger value="articles" className="flex items-center text-purple-900 data-[state=active]:bg-purple-100">
               <BookOpen className="mr-2" />Book Chapters & Articles
             </TabsTrigger>
-            <TabsTrigger value="presentations" className="flex items-center">
+            <TabsTrigger value="presentations" className="flex items-center text-purple-900 data-[state=active]:bg-purple-100">
               <Presentation className="mr-2" />Presentations
             </TabsTrigger>
           </TabsList>
