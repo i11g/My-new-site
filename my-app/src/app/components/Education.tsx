@@ -135,7 +135,7 @@ const Education = () => {
                   </ul>
                 </ScrollArea>
               </CardContent>
-            </Card>
+            </Card >
           </TabsContent>          
           <TabsContent value="trainings">
             <Card className="bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300">
@@ -152,8 +152,7 @@ const Education = () => {
                             <BookOpen className="mr-2 flex-shrink-0 text-green-500" />
                             <span>{item}</span>
                           </li>
-                        ))}
-                      
+                        ))}                      
                     </div>
                   ))}
                 </ScrollArea>

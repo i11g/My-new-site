@@ -2,14 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { Linkedin, Github, Twitter, Instagram } from 'lucide-react';
 import About from '@/app/components/About';
-import Education from '@/app/components/Education';
 import Experience from '@/app/components/Experience';
 import Projects from '@/app/components/Projects';
+import Education from '@/app/components/Education';
 import Publications from '@/app/components/Publications';
 
 const HomePage = () => {
   const [text, setText] = useState('');
-  const fullText = "I build processes and make make projects.";
+  const fullText = "I build processes and make projects.";
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -20,10 +20,10 @@ const HomePage = () => {
         if (index > fullText.length) {
           clearInterval(typingTimer);
         }
-      }, 20); // Adjust the speed of typing here
+      }, 20);
 
       return () => clearInterval(typingTimer);
-    }, 1000); // Delay before starting the typing animation
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -36,17 +36,21 @@ const HomePage = () => {
           <h1 className="text-7xl font-bold mb-6 animate-fade-in-down">
             Hey, I'm Ivan.
           </h1>
-          <h2 className="text-4xl mb-10 relative h-[1.5em]">
+          <h2 className="text-4xl mb-10 relative h-[1.5em] italic">
             <span className="absolute left-0 right-0 overflow-hidden whitespace-nowrap handwriting-animation">
               {text}
             </span>
             <span className="invisible">{fullText}</span>
           </h2>
           
-          <p className="text-2xl mb-64 opacity-0 animate-fade-in animation-delay-4000">
+          <p className="text-2xl mb-8 opacity-0 animate-fade-in animation-delay-4000">
             Entrepreneurial guy working on projects development, focused on optimizing efficiency and tackling a wide array of business challenges.
             Building big ideas.
           </p>
+          
+          <a href="#projects" className="bg-white text-purple-900 px-6 py-2 rounded-full font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 mb-8 inline-block opacity-0 animate-fade-in animation-delay-4250">
+            Projects
+          </a>
           
           {/* Social Icons */}
           <div className="flex justify-center items-center space-x-8 opacity-0 animate-fade-in animation-delay-4500">
@@ -64,12 +68,11 @@ const HomePage = () => {
             </a>
           </div>
         </div>
-      </section>
-      
+      </section>      
       <About />
-      <Education />
       <Experience />
       <Projects />
+      <Education />
       <Publications />
     </div>
   );
