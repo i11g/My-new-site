@@ -9,7 +9,7 @@ import Publications from '@/app/components/Publications';
 
 const HomePage = () => {
   const [text, setText] = useState('');
-  const fullText = "I build processes and make projects live.";
+  const fullText = "I build processes and bring projects to life.";
 
   useEffect(() => {
     const timer = setTimeout(() => {

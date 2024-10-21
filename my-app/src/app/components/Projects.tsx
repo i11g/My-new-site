@@ -23,7 +23,7 @@ const projectsData: Project[] = [
       "Net Area: 13,800 sq.m., spanning across four HQ buildings",
       "Ongoing"
     ],
-    image: "/images/workplace-project.jpg",
+    image: "/images/workplace-project1.jpg",
     category: "Development Projects"
   },
   {
@@ -54,7 +54,7 @@ const projectsData: Project[] = [
       "Objective: Design and implementation of centralized process for archive management aiming process optimization, digitalization, and efficiency",  
       "Project Goals: Development of centralized process of archive management"
     ],
-    image: "/images/dsk-bank-archive.jpg",
+    image: "/images/archive.jpg",
     category: "Building Processes"
   },
   {
@@ -64,7 +64,7 @@ const projectsData: Project[] = [
       "Objective: Leading the integration of HQ’s buildings and units’ relocations.",  
       "Project Goals: Succsesful units relocation "
     ],
-    image: "",
+    image: "/images/integration.jpg",
     category: "Building Processes"
   },
   {
@@ -74,35 +74,45 @@ const projectsData: Project[] = [
       "Objective: Creation of centralized and transparent processes for procurement and assets management.",  
       "Objective: Development of budget management processes on a company level driven by budget responsible departments",  
     ],
-    image: "",
+    image: "/image/procurement.jpg",
     category: "Building Processes"
   },
   {
-    title: "Development and implementation of Centralized Procurement Processes and creation of Budget Responsible Departments ",
+    title: "Office Space App ",
     icon: <Archive className="mr-2" />,
     details: [
-      "Objective: Creation of centralized and transparent processes for procurement and assets management.",  
-      "Objective: Development of budget management processes on a company level driven by budget responsible departments",  
+      "Office space app gives you the tool to manage all of your office space with easy",
+      "currently building"  
+        
     ],
     image: "",
     category: "IT Projects"
   },
   {
-    title: "Development and implementation of Centralized Procurement Processes and creation of Budget Responsible Departments ",
+    title: "Real Estate Application ",
     icon: <Archive className="mr-2" />,
     details: [
-      "Objective: Creation of centralized and transparent processes for procurement and assets management.",  
-      "Objective: Development of budget management processes on a company level driven by budget responsible departments",  
+      "real Estate App ",  
+      "currently building",  
     ],
     image: "",
     category: "IT Projects"
   },
   {
-    title: "Development and implementation of Centralized Procurement Processes and creation of Budget Responsible Departments ",
+    title: "My previous personal page",
     icon: <Archive className="mr-2" />,
     details: [
-      "Objective: Creation of centralized and transparent processes for procurement and assets management.",  
-      "Objective: Development of budget management processes on a company level driven by budget responsible departments",  
+      "Portfolio page made wiht markdown and Ruby",  
+       
+    ],
+    image: "",
+    category: "IT Projects"
+  },
+  {
+    title: "My QA Automation Projects",
+    icon: <Archive className="mr-2" />,
+    details: [
+      "All of my QA automation projects during my study at SoftUni are in i11g",         
     ],
     image: "",
     category: "IT Projects"
@@ -110,7 +120,8 @@ const projectsData: Project[] = [
 ];
 
 const Projects: React.FC = () => {
-  const [activeTab, setActiveTab] = useState("Business");
+  
+  const [activeTab, setActiveTab] = useState("Development Projects");
 
   const categories = ['Development Projects', 'Building Processes', 'IT Projects'];
 
