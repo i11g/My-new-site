@@ -44,14 +44,14 @@ const HomePage = () => {
           </h2>
           
           <p className="text-2xl mb-8 opacity-0 animate-fade-in animation-delay-4000">
-            Result-oriented guy working on projects development,focused on optimizing efficiency while tackling a wide array of business challenges.</p>
+            Result-oriented guy working on projects development, focused on optimizing efficiency while tackling a wide array of business challenges.</p>
             
 
           <p className="text-2xl mb-8 opacity-0 animate-fade-in animation-delay-4000">            
             Building big ideas.
           </p>
           
-          <a href="#projects" className="bg-white text-purple-900 px-16 py-4 rounded-full font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 mb-8 inline-block opacity-0 animate-fade-in animation-delay-4250">
+          <a href="#projects" className="bg-green-500 text-purple-900 px-16 py-4 rounded-full font-semibold text-lg hover:bg-green-600 transition-all duration-300 mb-8 inline-block opacity-0 animate-fade-in animation-delay-4250">
             Projects
           </a>
           
