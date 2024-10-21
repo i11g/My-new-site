@@ -22,11 +22,20 @@ type ExperienceData = {
 const experienceData: ExperienceData = {
   DSK: [
     {
+      title: "Head of WorkPlace Management and Accomodation Department",
+      company: "DSK Bank",
+      companyUrl: "https://dskbank.bg/",
+      location: "5 Georgi Benkovski str., Sofia",
+      period: "2024 – Present",
+      responsibilities: [
+        "Management of ",]
+    },
+    {
       title: "Head of HQ Investment Project, Logistics and Transportation Department",
       company: "DSK Bank",
       companyUrl: "https://dskbank.bg/",
       location: "5 Georgi Benkovski str., Sofia",
-      period: "2021 – Present",
+      period: "2021 – 2024",
       responsibilities: [
         "Management of HQ investment projects focused on modern and digitalized working environments",
         "Planning and organization of utilities and facilities services",
@@ -39,7 +48,7 @@ const experienceData: ExperienceData = {
       company: "DSK Bank",
       companyUrl: "https://dskbank.bg/",
       location: "5 Georgi Benkovski str., Sofia",
-      period: "2015 – 2021",
+      period: "2014 – 2021",
       responsibilities: [
         "Management of HQ constructions and investment projects for efficient and advanced office spaces",
         "Organization of facilities and utilities operations",
@@ -50,21 +59,85 @@ const experienceData: ExperienceData = {
   ],
   DZI: [
     {
-      title: "Head of Headquarter Administrative Activity Department",
-      company: "DSK Bank",
-      companyUrl: "https://dskbank.bg/",
-      location: "5 Georgi Benkovski str., Sofia",
-      period: "2015 – 2021",
+      title: "Director, General Services Department",
+      company: "Insurance Company “DZI",
+      companyUrl: "https://www.dzi.bg/",
+      location: "3 Georgi Benkovski str., Sofia",
+      period: "2012 – 2013",
       responsibilities: [
-        "Management of HQ constructions and investment projects for efficient and advanced office spaces",
+        "Management of real estate investment activity, office reconstruction, repairs, and maintenance",
+        "Supervision of logistics, security, archiving, and record activities",
         "Organization of facilities and utilities operations",
         "OPEX and CAPEX budget preparation and administration",
-        "Archiving, assets, and warehouses operations management with a focus on process efficiency and flexibility"
+        "Procurement organization and management"]
+    },
+    {
+      title: "Director, Procurement and Logistics Department",
+      company: "Insurance Company “DZI",
+      companyUrl: "https://www.dzi.bg/",
+      location: "3 Georgi Benkovski str., Sofia",
+      period: "2008 – 2012",
+      responsibilities: [
+       " Management of real estate, logistics, archiving, and record activities",
+       "Procurement organization and management",
+        "Organization of facilities and utilities operations",
+        "Budget management and administration",        
+      ]
+    },
+    {
+      title: "Director, Administration and Facilities Department",
+      company: "Insurance Company “DZI",
+      companyUrl: "https://www.dzi.bg/",
+      location: "3 Georgi Benkovski str., Sofia",
+      period: "2008 – 2012",
+      responsibilities: [
+       " Management of real estate, logistics, archiving, security and record activities",
+       "Organization of facilities and utilities operations",
+        "Budget management and administration",        
       ]
     },
   ],
-  "The University of Iowa": [
-    // Add University of Iowa experiences here
+  "The University of Iowa & Missuori State University ": [
+    {
+      title: " Graduate Research Assistant",
+      company: "The University of Iowa",
+      companyUrl: "https://uiowa.com/",
+      location: "305 Chemistry Building, Iowa City, IA 52242-1294",
+      period: "2005 – 2007",
+      responsibilities: [
+       "Research in the fields of supramolecular and organic chemistry",        
+      ]
+    },
+    {
+      title: " Graduate Teaching Assistant",
+      company: "The University of Iowa",
+      companyUrl: "https://uiowa.com/",
+      location: "305 Chemistry Building, Iowa City, IA 52242-1294",
+      period: "2003 – 2005",
+      responsibilities: [
+       "Teaching Organic Chemistry I and II",        
+      ]
+    },
+    {
+      title: " Graduate Research and Teaching Assistant",
+      company: "Missouri State University",
+      companyUrl: "https://www.missouristate.edu/",
+      location: "901 S National Ave, Springfield, MO 65897 ",
+      period: "2002 – 2003",
+      responsibilities: [
+       "Research in the filed of Metal-Organic Chemistry and teaching Organic Chemistry I and II",        
+      ]
+    },
+    {
+      title: " Research Associate, Laboratory and Store Assistant",
+      company: "Missouri State University",
+      companyUrl: "https://www.missouristate.edu/",
+      location: "901 S National Ave, Springfield, MO 65897",
+      period: "2000 – 2002",
+      responsibilities: [
+       "Research in the filed of Metal-Organic Chemistry and assisting in the University chemical store",        
+      ]
+    },
   ]
 };
 
