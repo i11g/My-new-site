@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/app/components/ui/card';
 import { ScrollArea } from '@/app/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app/components/ui/tabs';
-import { Rocket, Building, Archive, Warehouse } from 'lucide-react';
+import { Rocket, Building, Archive, Warehouse, FileText } from 'lucide-react';
 import Image from 'next/image';
 
 type Project = {
@@ -74,7 +74,7 @@ const projectsData: Project[] = [
       "Objective: Creation of centralized and transparent processes for procurement and assets management.",  
       "Objective: Development of budget management processes on a company level driven by budget responsible departments",  
     ],
-    image: "/image/procurement.jpg",
+    image: "/images/procurement.jpg",
     category: "Building Processes"
   },
   {
@@ -120,19 +120,17 @@ const projectsData: Project[] = [
 ];
 
 const Projects: React.FC = () => {
-  
   const [activeTab, setActiveTab] = useState("Development Projects");
-
   const categories = ['Development Projects', 'Building Processes', 'IT Projects'];
 
   return (
-    <section id="projects" className="pt-32 pb-20 bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300">
+    <section id="projects" className="pt-32 pb-20 bg-gradient-to-br from-purple-900 to-blue-900 text-white min-h-screen">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-10 text-white flex items-center justify-center">
           <Rocket className="mr-2" /> Projects
         </h1>
-        <p className="text-2xl font-italic text-center mb-6 text-white flex items-center justify-center">
-        Here you will find a wide array of projects that I have led, created, or played an important role in
+        <p className="text-2xl italic text-center mb-6 text-white">
+          Here you will find a wide array of projects that I have led, created, or played an important role in
         </p>
         
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
@@ -149,33 +147,35 @@ const Projects: React.FC = () => {
           </TabsList>
           {categories.map((category) => (
             <TabsContent key={category} value={category}>
-              <ScrollArea className="h-[75vh] w-full rounded-md pr-4">
-                <div className="space-y-4">
+              <ScrollArea className="h-[calc(100vh-300px)] w-full rounded-md pr-4">
+                <div className="space-y-6">
                   {projectsData
                     .filter((project) => project.category === category)
                     .map((project, index) => (
-                      <Card key={index} className="overflow-hidden bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300">
+                      <Card key={index} className="overflow-hidden bg-gradient-to-br from-purple-800 to-blue-800 text-white border border-purple-300">
                         <div className="flex flex-col md:flex-row">
-                          <div className="flex-grow p-4">
-                            <h3 className="text-xl font-semibold flex items-center mb-2">
-                              {project.icon}
+                          <div className="flex-grow p-6">
+                            <h3 className="text-xl font-semibold flex items-center mb-4">
+                              {project.icon || <FileText className="mr-2" />}
                               {project.title}
                             </h3>
-                            <ul className="list-disc list-inside space-y-1 text-sm">
+                            <ul className="list-disc list-inside space-y-2 text-sm">
                               {project.details.map((detail, detailIndex) => (
                                 <li key={detailIndex}>{detail}</li>
                               ))}
                             </ul>
                           </div>
-                          <div className="w-full md:w-1/3 p-4 relative h-48">
-                            <Image 
-                              src={project.image} 
-                              alt={project.title} 
-                              layout="fill"
-                              objectFit="cover"
-                              className="rounded"
-                            />
-                          </div>
+                          {project.image && (
+                            <div className="w-full md:w-1/3 p-4 relative h-48 md:h-auto">
+                              <Image 
+                                src={project.image} 
+                                alt={project.title} 
+                                layout="fill"
+                                objectFit="cover"
+                                className="rounded"
+                              />
+                            </div>
+                          )}
                         </div>
                       </Card>
                     ))}

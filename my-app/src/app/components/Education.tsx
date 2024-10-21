@@ -1,5 +1,5 @@
 import React from 'react'
-import { GraduationCap, Award, BookOpen } from 'lucide-react'
+import { GraduationCap, Award, BookOpen, Calendar} from 'lucide-react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/components/ui/tabs"
 import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/card"
 import { ScrollArea } from '@/app/components/ui/scroll-area';
@@ -66,23 +66,26 @@ const Education = () => {
   const trainings: Training[] = [
     { year: 2023, items: ["Leadership Academy - Vladimir Borachev"] },
     { year: 2021, items: ["New Service Vision Model - Anastasia Vladychynska Consulting"] },
-    { year: 2019, items: ["Facility management and energy services - Sofia University “St. Kliment Ohridski"] },
+    { year: 2019, items: ["Facility management and energy services - Sofia University" ] },
     { year: 2018, items: ["Facility Management** - WIFI Bulgaria"] },
     { year: 2017, items: ["Record keeping, archiving, storage and usage of banks archiving documents according to the new normative acts** - International banking institute"] },
     { year: 2013, items: ["Effective financial markets negotiations** - OD&M Consulting"] },
-    { year: 2011, items: ["Results achievements and relationship management** - In your Hands"] },
-    { year: 2011, items: ["Targeting skills - In your Hands"] },
-    { year: 2011, items: ["Leadership and teams’ motivations** - In your Hands"] },
-    { year: 2011, items: ["Delegations skills and monitoring** - In your Hands"] },
+    { year: 2011, items: [
+      "Results achievements and relationship management** - In your Hands",
+      "Targeting skills - In your Hands",
+      "Leadership and teams' motivations** - In your Hands",
+      "Delegations skills and monitoring** - In your Hands"
+    ] },
     
   ];
 
+  
   return (
-    <section id="education" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="education" className="py-20 bg-gradient-to-br from-purple-900 to-blue-900 min-h-screen">
+       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-10 text-white">My Educational Journey</h2>
         <Tabs defaultValue="education" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 bg-white">
+          <TabsList className="grid w-full grid-cols-3 bg-white mb-6">
             <TabsTrigger value="education" className="text-purple-900 data-[state=active]:bg-purple-100">
               <GraduationCap className="mr-2 h-4 w-4" />
               Education
@@ -97,34 +100,36 @@ const Education = () => {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="education">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {educationData.map((edu, index) => (
-                <Card key={index} className="bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300">
-                  <CardHeader>
-                    <CardTitle className="text-xl font-semibold flex items-center">
-                      <GraduationCap className="mr-2 text-yellow-500" />
-                      {edu.degree}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="font-medium">{edu.area}</p>
-                    <a href={edu.universityUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                      {edu.university}
-                    </a>
-                    <p>{edu.department}</p>
-                    <p className="text-sm text-gray-600">{edu.period}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <ScrollArea className="h-[calc(100vh-300px)] w-full rounded-md pr-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {educationData.map((edu, index) => (
+                  <Card key={index} className="bg-gradient-to-br from-purple-800 to-blue-800 text-white border border-purple-300">
+                    <CardHeader>
+                      <CardTitle className="text-xl font-semibold flex items-center">
+                        <GraduationCap className="mr-2 text-yellow-500" />
+                        {edu.degree}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="font-medium">{edu.area}</p>
+                      <a href={edu.universityUrl} target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:underline">
+                        {edu.university}
+                      </a>
+                      <p>{edu.department}</p>
+                      <p className="text-sm text-gray-300">{edu.period}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </ScrollArea>
           </TabsContent>          
           <TabsContent value="honors">
-            <Card className="bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300">
+            <Card className="bg-gradient-to-br from-purple-800 to-blue-800 text-white border border-purple-300">
               <CardHeader>
                 <CardTitle>Academic Honors and Awards</CardTitle>
               </CardHeader>
               <CardContent>
-                <ScrollArea className="h-[400px] w-full rounded-md border p-4">
+                <ScrollArea className="h-[calc(100vh-400px)] w-full rounded-md border p-4">
                   <ul className="space-y-4">
                     {honors.map((honor, index) => (
                       <li key={index} className="flex items-start">
@@ -135,26 +140,33 @@ const Education = () => {
                   </ul>
                 </ScrollArea>
               </CardContent>
-            </Card >
+            </Card>
           </TabsContent>          
           <TabsContent value="trainings">
-            <Card className="bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300">
+            <Card className="bg-gradient-to-br from-purple-800 to-blue-800 text-white border border-purple-300">
               <CardHeader>
                 <CardTitle>Professional Development</CardTitle>
               </CardHeader>
               <CardContent>
-                <ScrollArea className="h-[400px] w-full rounded-md border p-4">
-                  {trainings.map((training, index) => (
-                    <div key={index} className="mb-6">
-                      <h3 className="text-xl font-semibold mb-2">{training.year}</h3>
-                               {training.items.map((item, itemIndex) => (
-                          <li key={itemIndex} className="flex items-start">
-                            <BookOpen className="mr-2 flex-shrink-0 text-green-500" />
-                            <span>{item}</span>
-                          </li>
-                        ))}                      
-                    </div>
-                  ))}
+                <ScrollArea className="h-[calc(100vh-400px)] w-full rounded-md border p-4">
+                  <ul className="space-y-4">
+                    {trainings.map((training, index) => (
+                      <li key={index}>
+                        <div className="font-semibold flex items-center mb-2">
+                          <Calendar className="mr-2 text-yellow-500" />
+                          {training.year}
+                        </div>
+                        <ul className="space-y-2 ml-6">
+                          {training.items.map((item, itemIndex) => (
+                            <li key={itemIndex} className="flex items-start">
+                              <BookOpen className="mr-2 flex-shrink-0 text-green-500" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    ))}
+                  </ul>
                 </ScrollArea>
               </CardContent>
             </Card>
