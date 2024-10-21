@@ -11,7 +11,7 @@ type Project = {
   icon: React.ReactNode;
   details: string[];
   image: string;
-  category: 'Business' | 'IT' | 'Chemistry';
+  category: 'Development Projects' | 'Building Processes' | 'IT Projects';
 };
 
 const projectsData: Project[] = [
@@ -23,7 +23,7 @@ const projectsData: Project[] = [
       "Net Area: 13,800 sq.m., spanning across four HQ buildings"
     ],
     image: "/images/workplace-project.jpg",
-    category: "Business"
+    category: "Development Projects"
   },
   {
     title: "Digital Factory Development",
@@ -34,20 +34,7 @@ const projectsData: Project[] = [
       "Reconstructed Area: 3,800 sq.m."
     ],
     image: "/images/digital-factory.jpg",
-    category: "Business"
-  },
-  {
-    title: "Centralization of DSK Bank archiving processes and Construction of DSK Bank Centralized Warehous",
-    icon: <Archive className="mr-2" />,
-    details: [
-      "Objective: Design and implementation of centralized process for archive management aiming process optimization, digitalization, and efficiency",
-      "Project Scope: Over of 1,000,000 documents and 300 non-centralized archives",
-      "Project Scope: Development of modern and automated central warehouse for close to 800,000 documents with office part for 30 FTE starting from scratch",
-      "Development Area: 2,700 sq.m.",
-      "Project Goals: Development of centralized process of archive management"
-    ],
-    image: "/images/dsk-bank-archive.jpg",
-    category: "Business"
+    category: "Development Projects"
   },
   {
     title: "Construction of DSK Bank Centralized Warehouse",
@@ -57,14 +44,44 @@ const projectsData: Project[] = [
       "Development Area: 2,700 sq.m."
     ],
     image: "/images/dsk-bank-warehouse.jpg",
-    category: "IT"
+    category: "Development Projects"
+  },
+  {
+    title: "Centralization of DSK Bank archiving processes ",
+    icon: <Archive className="mr-2" />,
+    details: [
+      "Objective: Design and implementation of centralized process for archive management aiming process optimization, digitalization, and efficiency",  
+      "Project Goals: Development of centralized process of archive management"
+    ],
+    image: "/images/dsk-bank-archive.jpg",
+    category: "Building Processes"
+  },
+  {
+    title: "Team leader in Odessos project as part of integration of DSK Bank and Express Bank ",
+    icon: <Archive className="mr-2" />,
+    details: [
+      "Objective: Leading the integration of HQ’s buildings and units’ relocations.",  
+      "Project Goals: Succsesful units relocation "
+    ],
+    image: "",
+    category: "Building Processes"
+  },
+  {
+    title: "Development and implementation of Centralized Procurement Processes and creation of Budget Responsible Departments ",
+    icon: <Archive className="mr-2" />,
+    details: [
+      "Objective: Creation of centralized and transparent processes for procurement and assets management.",  
+      "Objective: Development of budget management processes on a company level driven by budget responsible departments",  
+    ],
+    image: "",
+    category: "Building Processes"
   },
 ];
 
 const Projects: React.FC = () => {
   const [activeTab, setActiveTab] = useState("Business");
 
-  const categories = ['Business', 'IT', 'Chemistry'];
+  const categories = ['Development Projects', 'Building Processes', 'IT Projects'];
 
   return (
     <section id="projects" className="pt-32 pb-20 bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300">
