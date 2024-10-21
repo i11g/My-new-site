@@ -9,7 +9,7 @@ import Publications from '@/app/components/Publications';
 
 const HomePage = () => {
   const [text, setText] = useState('');
-  const fullText = "I build projects and make cool things.";
+  const fullText = "I build processes and make make projects.";
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -20,7 +20,7 @@ const HomePage = () => {
         if (index > fullText.length) {
           clearInterval(typingTimer);
         }
-      }, 30); // Adjust the speed of typing here
+      }, 20); // Adjust the speed of typing here
 
       return () => clearInterval(typingTimer);
     }, 1000); // Delay before starting the typing animation
@@ -36,7 +36,7 @@ const HomePage = () => {
           <h1 className="text-7xl font-bold mb-6 animate-fade-in-down">
             Hey, I'm Ivan.
           </h1>
-          <h2 className="text-4xl mb-8 relative h-[1.5em]">
+          <h2 className="text-4xl mb-10 relative h-[1.5em]">
             <span className="absolute left-0 right-0 overflow-hidden whitespace-nowrap handwriting-animation">
               {text}
             </span>

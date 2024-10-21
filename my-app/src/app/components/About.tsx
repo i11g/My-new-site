@@ -10,7 +10,8 @@ const About = () => {
         <Card className="bg-gradient-to-br from-purple-900 to-blue-900 text-white  border-2 border-purple-800">
           <CardContent>
             <p className="mb-4">
-              Hello! I'm Ivan Georgiev, a passionate Product Engineer and QA Automation Specialist with over 15 years of experience in the tech industry. I specialize in building efficient processes, developing robust QA automation frameworks, and creating innovative solutions to complex problems.
+              Hello! I'm Ivan Georgiev, a and have a a passion for exploring different fields, ranging from project management and supramolecular chemistry to computer science and QA Automation testing.  
+              I specialize in building efficient processes, developing robust QA automation frameworks, and creating innovative solutions to complex problems.
             </p>
             <p className="mb-4">
               My expertise spans across various domains, including:
