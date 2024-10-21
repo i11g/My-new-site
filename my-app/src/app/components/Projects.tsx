@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/app/components/ui/card';
 import { ScrollArea } from '@/app/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app/components/ui/tabs';
 import { Rocket, Building, Archive, Warehouse } from 'lucide-react';
+import Image from 'next/image';
 
 type Project = {
   title: string;
@@ -21,7 +22,7 @@ const projectsData: Project[] = [
       "Focus: Development of new modern and flexible work environment for all HQ teams",
       "Net Area: 13,800 sq.m., spanning across four HQ buildings"
     ],
-    image: "/images/workplace-project",
+    image: "/images/workplace-project.jpg",
     category: "Business"
   },
   {
@@ -32,18 +33,20 @@ const projectsData: Project[] = [
       "Number of FTE: 500",
       "Reconstructed Area: 3,800 sq.m."
     ],
-    image: "/Profile",
+    image: "/images/digital-factory.jpg",
     category: "Business"
   },
   {
-    title: "Centralization of DSK Bank archiving processes and documents",
+    title: "Centralization of DSK Bank archiving processes and Construction of DSK Bank Centralized Warehous",
     icon: <Archive className="mr-2" />,
     details: [
       "Objective: Design and implementation of centralized process for archive management aiming process optimization, digitalization, and efficiency",
       "Project Scope: Over of 1,000,000 documents and 300 non-centralized archives",
+      "Project Scope: Development of modern and automated central warehouse for close to 800,000 documents with office part for 30 FTE starting from scratch",
+      "Development Area: 2,700 sq.m.",
       "Project Goals: Development of centralized process of archive management"
     ],
-    image: "/api/placeholder/400/300",
+    image: "/images/dsk-bank-archive.jpg",
     category: "Business"
   },
   {
@@ -53,8 +56,8 @@ const projectsData: Project[] = [
       "Project Scope: Development of modern and automated central warehouse for close to 800,000 documents with office part for 30 FTE starting from scratch",
       "Development Area: 2,700 sq.m."
     ],
-    image: "/api/placeholder/400/300",
-    category: "Business"
+    image: "/images/dsk-bank-warehouse.jpg",
+    category: "IT"
   },
 ];
 
@@ -102,8 +105,14 @@ const Projects: React.FC = () => {
                               ))}
                             </ul>
                           </div>
-                          <div className="w-full md:w-1/3 p-4">
-                            <img src={project.image} alt={project.title} className="w-full h-full object-cover rounded" />
+                          <div className="w-full md:w-1/3 p-4 relative h-48">
+                            <Image 
+                              src={project.image} 
+                              alt={project.title} 
+                              layout="fill"
+                              objectFit="cover"
+                              className="rounded"
+                            />
                           </div>
                         </div>
                       </Card>
