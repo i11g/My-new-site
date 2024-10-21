@@ -16,11 +16,12 @@ type Project = {
 
 const projectsData: Project[] = [
   {
-    title: "Workplace Advisory Project",
+    title: "Workplace and Accomodation Strategy",
     icon: <Building className="mr-2" />,
     details: [
       "Focus: Development of new modern and flexible work environment for all HQ teams",
-      "Net Area: 13,800 sq.m., spanning across four HQ buildings"
+      "Net Area: 13,800 sq.m., spanning across four HQ buildings",
+      "Ongoing"
     ],
     image: "/images/workplace-project.jpg",
     category: "Development Projects"
@@ -40,8 +41,8 @@ const projectsData: Project[] = [
     title: "Construction of DSK Bank Centralized Warehouse",
     icon: <Warehouse className="mr-2" />,
     details: [
-      "Project Scope: Development of modern and automated central warehouse for close to 800,000 documents with office part for 30 FTE starting from scratch",
-      "Development Area: 2,700 sq.m."
+      "Project Scope: Development of modern and automated central warehouse for close to 800,000 documents",
+      "Development Area:  Office part for 30 FTE starting and total are of 2,700 sq.m."
     ],
     image: "/images/dsk-bank-warehouse.jpg",
     category: "Development Projects"
@@ -76,6 +77,36 @@ const projectsData: Project[] = [
     image: "",
     category: "Building Processes"
   },
+  {
+    title: "Development and implementation of Centralized Procurement Processes and creation of Budget Responsible Departments ",
+    icon: <Archive className="mr-2" />,
+    details: [
+      "Objective: Creation of centralized and transparent processes for procurement and assets management.",  
+      "Objective: Development of budget management processes on a company level driven by budget responsible departments",  
+    ],
+    image: "",
+    category: "IT Projects"
+  },
+  {
+    title: "Development and implementation of Centralized Procurement Processes and creation of Budget Responsible Departments ",
+    icon: <Archive className="mr-2" />,
+    details: [
+      "Objective: Creation of centralized and transparent processes for procurement and assets management.",  
+      "Objective: Development of budget management processes on a company level driven by budget responsible departments",  
+    ],
+    image: "",
+    category: "IT Projects"
+  },
+  {
+    title: "Development and implementation of Centralized Procurement Processes and creation of Budget Responsible Departments ",
+    icon: <Archive className="mr-2" />,
+    details: [
+      "Objective: Creation of centralized and transparent processes for procurement and assets management.",  
+      "Objective: Development of budget management processes on a company level driven by budget responsible departments",  
+    ],
+    image: "",
+    category: "IT Projects"
+  },
 ];
 
 const Projects: React.FC = () => {
@@ -89,6 +120,9 @@ const Projects: React.FC = () => {
         <h1 className="text-4xl font-bold text-center mb-10 text-white flex items-center justify-center">
           <Rocket className="mr-2" /> Projects
         </h1>
+        <p className="text-2xl font-italic text-center mb-6 text-white flex items-center justify-center">
+        Here you will find a wide array of projects that I have led, created, or played an important role in
+        </p>
         
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="w-full flex mb-6 bg-white rounded-lg overflow-x-auto">
