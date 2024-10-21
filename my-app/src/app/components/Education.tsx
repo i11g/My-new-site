@@ -7,12 +7,11 @@ import { ScrollArea } from '@/app/components/ui/scroll-area';
 const Education = () => {
   const educationData = [
     {
-      degree: "Ph.D. in Physical Science",
-      area: "Supramolecular Chemistry",
-      university: "The University of Iowa",
-      universityUrl: "https://uiowa.edu/",
-      department: "Department of Chemistry",
-      period: "2003 - 2007"
+      degree: "QA Autamation Engineer",
+      area: "QA Automation Testing",
+      university: "SoftUni University",
+      universityUrl: "https://softuni.bg/",
+      period: "2023 - 2024"
     },
     {
       degree: "Ph.D. in Physical Science",
@@ -21,30 +20,29 @@ const Education = () => {
       universityUrl: "https://uiowa.edu/",
       department: "Department of Chemistry",
       period: "2003 - 2007"
+    },    
+    {
+      degree: "Master of Economics",
+      area: "Insurance and Social Security Management",
+      university: "VUZF University",
+      universityUrl: "https://vuzf.edu/",
+      period: "2008 - 20011"
     },
     {
-      degree: "Ph.D. in Physical Science",
-      area: "Supramolecular Chemistry",
-      university: "The University of Iowa",
-      universityUrl: "https://uiowa.edu/",
+      degree: "M.S. in Organic Shemistry",
+      area: "Organic Chemistry",
+      university: "Missuori State University",
+      universityUrl: "https://missouristate.edu/",
       department: "Department of Chemistry",
-      period: "2003 - 2007"
+      period: "2002 - 2003"
     },
     {
-      degree: "Ph.D. in Physical Science",
-      area: "Supramolecular Chemistry",
-      university: "The University of Iowa",
-      universityUrl: "https://uiowa.edu/",
+      degree: "B.S. in Organic Shemistry",
+      area: "Organic Chemistry, Mathematics",
+      university: "Missuori State University",
+      universityUrl: "https://missouristate.edu/",
       department: "Department of Chemistry",
-      period: "2003 - 2007"
-    },
-    {
-      degree: "Ph.D. in Physical Science",
-      area: "Supramolecular Chemistry",
-      university: "The University of Iowa",
-      universityUrl: "https://uiowa.edu/",
-      department: "Department of Chemistry",
-      period: "2003 - 2007"
+      period: "2000 - 2002"
     },
     
   ]
@@ -57,13 +55,26 @@ const Education = () => {
    }; 
 
    const honors: Honor[] = [
-    "Vice President of Missouri State University ACS Student Affiliate Chapter/Chemistry Honors Society",
-    // ... (other honors)
+    "Vice President of Missouri State University ACS Student Affiliate Chapter/Chemistry Honors Society",     
+    "American Chemical Society, Division of Inorganic Chemistry, Student Travel Award to the 232nd ACS National Meeting and Exposition, San Francisco, CA, 2006",
+ "The University of Iowa Chemistry Department Travel Award to the 89th Canadian Chemistry Conference and Exhibition, Halifax, NS, Canada, 2006",
+"Moderator at the 8th James F. Jacobsen Graduate Forum, Iowa City, IA, 2006",
+"The University of Iowa Student Government Travel Award to International Symposium on Supramolecular Chemistry XIII, South Bend, IN, 2004",
+" The University of Iowa Chemistry Department Travel Award to the 38th ACS Midwest Regional Meeting, Columbia, MO, 2003",
   ];
   
   const trainings: Training[] = [
+    { year: 2023, items: ["Leadership Academy - Vladimir Borachev"] },
     { year: 2021, items: ["New Service Vision Model - Anastasia Vladychynska Consulting"] },
-    // ... (other trainings)
+    { year: 2019, items: ["Facility management and energy services - Sofia University “St. Kliment Ohridski"] },
+    { year: 2018, items: ["Facility Management** - WIFI Bulgaria"] },
+    { year: 2017, items: ["Record keeping, archiving, storage and usage of banks archiving documents according to the new normative acts** - International banking institute"] },
+    { year: 2013, items: ["Effective financial markets negotiations** - OD&M Consulting"] },
+    { year: 2011, items: ["Results achievements and relationship management** - In your Hands"] },
+    { year: 2011, items: ["Targeting skills - In your Hands"] },
+    { year: 2011, items: ["Leadership and teams’ motivations** - In your Hands"] },
+    { year: 2011, items: ["Delegations skills and monitoring** - In your Hands"] },
+    
   ];
 
   return (
@@ -91,7 +102,7 @@ const Education = () => {
                 <Card key={index} className="bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300">
                   <CardHeader>
                     <CardTitle className="text-xl font-semibold flex items-center">
-                      <GraduationCap className="mr-2" />
+                      <GraduationCap className="mr-2 text-yellow-500" />
                       {edu.degree}
                     </CardTitle>
                   </CardHeader>
@@ -136,14 +147,13 @@ const Education = () => {
                   {trainings.map((training, index) => (
                     <div key={index} className="mb-6">
                       <h3 className="text-xl font-semibold mb-2">{training.year}</h3>
-                      <ul className="space-y-2">
-                        {training.items.map((item, itemIndex) => (
+                               {training.items.map((item, itemIndex) => (
                           <li key={itemIndex} className="flex items-start">
                             <BookOpen className="mr-2 flex-shrink-0 text-green-500" />
                             <span>{item}</span>
                           </li>
                         ))}
-                      </ul>
+                      
                     </div>
                   ))}
                 </ScrollArea>
