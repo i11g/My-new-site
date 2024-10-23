@@ -10,18 +10,12 @@ const About = () => {
         <Card className="bg-gradient-to-br from-purple-900 to-blue-900 text-white  border-2 border-purple-800">
           <CardContent>
             <p className="mb-4">
-              Welcome! I'm Ivan Georgiev, and have a passion for exploring different fields, ranging from project management and supramolecular chemistry to computer science and QA Automation testing.  
-              I specialize in building efficient processes, developing robust QA automation frameworks, and creating innovative solutions to complex problems. while tackling a wide array of business challenges
-            </p>
+            Welcome! My name is Ivan Georgiev, and I'm passionate about exploring different fields, ranging from project development and supramolecular chemistry to computer science and QA automation. This unique blend of interests allows me to approach challenges from multiple angles and drive innovation. 
+            Recently, I started to utilize my knowledge of business processes and project development to build applications that transform workflows and enhance efficiency.
+              </p>
             <p className="mb-4">
-              My expertise spans across various domains, including:
+            During my work, I try to foster an atmosphere of creativity, where laughter and collaboration ignite a spark of innovation."
             </p>
-            <ul className="list-disc list-inside mb-4 ml-4">
-              <li>Project Managment</li>
-              <li>Process Development</li>
-              <li>QA Automation (Selenium, Cypress, TestCafe)</li>
-              <li>CI/CD Implementation</li>
-            </ul>
             <p className="mb-4">
               I'm constantly learning and adapting to new technologies, always looking for ways to improve processes and deliver high-quality projects.
             </p>
