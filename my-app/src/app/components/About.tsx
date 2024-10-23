@@ -14,7 +14,7 @@ const About = () => {
             Recently, I started to utilize my knowledge of business processes and project development to build applications that transform workflows and enhance efficiency.
               </p>
             <p className="mb-4">
-            During my work, I try to foster an atmosphere of creativity, where laughter and collaboration ignite a spark of innovation."
+            During my work, I try to foster an atmosphere of creativity, where laughter and collaboration ignite a spark of innovation.
             </p>
             <p className="mb-4">
               I'm constantly learning and adapting to new technologies, always looking for ways to improve processes and deliver high-quality projects.
