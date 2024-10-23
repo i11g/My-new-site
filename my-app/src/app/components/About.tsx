@@ -11,7 +11,7 @@ const About = () => {
           <CardContent>
             <p className="mb-4">
               Welcome! I'm Ivan Georgiev, and have a passion for exploring different fields, ranging from project management and supramolecular chemistry to computer science and QA Automation testing.  
-              I specialize in building efficient processes, developing robust QA automation frameworks, and creating innovative solutions to complex problems.
+              I specialize in building efficient processes, developing robust QA automation frameworks, and creating innovative solutions to complex problems. while tackling a wide array of business challenges
             </p>
             <p className="mb-4">
               My expertise spans across various domains, including:

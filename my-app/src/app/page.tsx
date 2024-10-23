@@ -23,7 +23,7 @@ const HomePage = () => {
       }, 20);
 
       return () => clearInterval(typingTimer);
-    }, 1000);
+    }, 800);
 
     return () => clearTimeout(timer);
   }, []);
@@ -44,11 +44,11 @@ const HomePage = () => {
           </h2>
           
           <p className="text-2xl mb-8 opacity-0 animate-fade-in animation-delay-4000">
-            Result-oriented guy working on projects development, focused on optimizing efficiency while tackling a wide array of business challenges.</p>
-            
-
-          <p className="text-2xl mb-8 opacity-0 animate-fade-in animation-delay-4000">            
-            Building big ideas.
+            Developing projects and optimizing processes with a focus on efficiency and innovation.
+          </p>
+          
+          <p className="text-2xl mb-8 opacity-0 animate-fade-in animation-delay-4000">
+            Building big ideas that make impact.
           </p>
           
           <a href="#projects" className="bg-green-500 text-purple-900 px-16 py-4 rounded-full font-semibold text-lg hover:bg-green-600 transition-all duration-300 mb-8 inline-block opacity-0 animate-fade-in animation-delay-4250">
@@ -56,7 +56,8 @@ const HomePage = () => {
           </a>
           
           {/* Social Icons */}
-          <div className="flex justify-center items-center space-x-8 opacity-0 animate-fade-in animation-delay-4500">
+
+          <div className="flex justify-center items-center space-x-8 opacity-0 animate-fade-in animation-delay-4500 mt-28">
             <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-all duration-300 ease-in-out">
               <Linkedin size={24} />
             </a>
@@ -71,7 +72,8 @@ const HomePage = () => {
             </a>
           </div>
         </div>
-      </section>      
+      </section>
+
       <About />
       <Experience />
       <Projects />
