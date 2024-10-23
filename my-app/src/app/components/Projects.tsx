@@ -21,7 +21,8 @@ const projectsData: Project[] = [
     details: [
       "Focus: Development of new modern and flexible work environment for all HQ teams",
       "Net Area: 13,800 sq.m., spanning across four HQ buildings",
-      "Ongoing"
+      "Ongoing",
+      "This project aims to enhance employee well-being and productivity by providing a dynamic workspace that adapts to the needs of agile teams. By incorporating modern design elements and flexible workspaces, we intend to foster collaboration, creativity, and a strong sense of community among team members. This initiative will not only improve work efficiency but also strengthen the company's identity and culture."
     ],
     image: "/images/workplace-project1.jpg",
     category: "Development Projects"
