@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { Card, CardContent } from '@/app/components/ui/card';
+import { Card } from '@/app/components/ui/card';
 import { ScrollArea } from '@/app/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app/components/ui/tabs';
 import { Rocket, Building, Archive, Warehouse, FileText } from 'lucide-react';
@@ -11,7 +11,7 @@ type Project = {
   icon: React.ReactNode;
   details: string[];
   image: string;
-  category: 'Development Projects' | 'Building Processes' | 'IT Projects';
+  category: 'Development Projects' | 'IT Projects' | 'Building Processes';
 };
 
 const projectsData: Project[] = [
@@ -22,9 +22,7 @@ const projectsData: Project[] = [
       "Focus: Development of new modern and flexible work environment for all HQ teams",
       "Net Area: 13,800 sq.m., spanning across four HQ buildings",
       "Ongoing",
-      "This project aims to enhance employee well-being and productivity by providing a dynamic workspace that adapts to the needs of agile teams", 
-      "By incorporating modern design elements and flexible workspaces, we intend to foster collaboration, creativity, and a strong sense of community among team members",
-       "This initiative will not only improve work efficiency but also strengthen the company's identity and culture."
+      "The project aims to enhance employee well-being and productivity by providing modern design elements and flexible workspaces, to foster collaboration, creativity, and a strong sense of community among team members.This initiative will not only improve work efficiency but also strengthen the company's identity and culture."
     ],
     image: "/images/workplace-project1.jpg",
     category: "Development Projects"
@@ -57,17 +55,17 @@ const projectsData: Project[] = [
       "Objective: Design and implementation of centralized process for archive management aiming process optimization, digitalization, and efficiency",  
       "Project Goals: Development of centralized process of archive management"
     ],
-    image: "/images/archive.jpg",
+    image: "",
     category: "Building Processes"
   },
   {
     title: "Team leader in Odessos project as part of integration of DSK Bank and Express Bank ",
     icon: <Archive className="mr-2" />,
     details: [
-      "Objective: Leading the integration of HQ’s buildings and units’ relocations.",  
-      "Project Goals: Succsesful units relocation "
+      "Objective: Leading the integration of HQ&apos;s buildings and units&apos relocations.",  
+      "Project Goals: Succsessul units relocation "
     ],
-    image: "/images/integration.jpg",
+        image: "",
     category: "Building Processes"
   },
   {
@@ -77,7 +75,7 @@ const projectsData: Project[] = [
       "Objective: Creation of centralized and transparent processes for procurement and assets management.",  
       "Objective: Development of budget management processes on a company level driven by budget responsible departments",  
     ],
-    image: "/images/procurement.jpg",
+    image: "",
     category: "Building Processes"
   },
   {
@@ -124,7 +122,7 @@ const projectsData: Project[] = [
 
 const Projects: React.FC = () => {
   const [activeTab, setActiveTab] = useState("Development Projects");
-  const categories = ['Development Projects', 'Building Processes', 'IT Projects'];
+  const categories = ['Development Projects', 'IT Projects', 'Building Processes'];
 
   return (
     <section id="projects" className="pt-32 pb-20 bg-gradient-to-br from-purple-900 to-blue-900 text-white min-h-screen">

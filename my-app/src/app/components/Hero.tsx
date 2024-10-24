@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-            Hello, I'm <span className="text-yellow-300">Ivan Georgiev</span>
+            Hello, I&apos;m <span className="text-yellow-300">Ivan Georgiev</span>
           </h1>
           <p className="mt-3 max-w-md mx-auto text-base text-white sm:text-lg md:mt-5 md:text-xl">
             A passionate developer with expertise in project management, QA automation testing, and .NET development.

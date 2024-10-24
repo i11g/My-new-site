@@ -34,7 +34,7 @@ const HomePage = () => {
       <section className="h-screen flex flex-col items-center justify-center">
         <div className="text-center max-w-5xl mx-auto px-8">
           <h1 className="text-7xl font-bold mb-6 animate-fade-in-down">
-            Hey, I'm Ivan.
+            Hey, I&apos;m Ivan.
           </h1>
           <h2 className="text-4xl mb-10 relative h-[1.5em] italic">
             <span className="absolute left-0 right-0 overflow-hidden whitespace-nowrap handwriting-animation">
