@@ -81,9 +81,9 @@ const Education = () => {
 
   
   return (
-    <section id="education" className="py-20 bg-gradient-to-br from-purple-900 to-blue-900 min-h-screen">
+    <section id="education" className="py-32 bg-gradient-to-br from-purple-900 to-blue-900 min-h-screen">
        <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-10 text-white">My Educational Journey</h2>
+        <h2 className="text-4xl font-bold text-center mb-10 text-white">📝 My Educational Journey</h2>
         <Tabs defaultValue="education" className="w-full">
           <TabsList className="grid w-full grid-cols-3 bg-white mb-6">
             <TabsTrigger value="education" className="text-purple-900 data-[state=active]:bg-purple-100">

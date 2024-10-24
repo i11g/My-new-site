@@ -45,7 +45,7 @@ const projectsData: Project[] = [
       "Project Scope: Development of modern and automated central warehouse for close to 800,000 documents",
       "Development Area:  Office part for 30 FTE starting and total are of 2,700 sq.m."
     ],
-    image: "/images/dsk-bank-warehouse.jpg",
+    image: "",
     category: "Development Projects"
   },
   {
@@ -123,58 +123,73 @@ const projectsData: Project[] = [
 const Projects: React.FC = () => {
   const [activeTab, setActiveTab] = useState("Development Projects");
   const categories = ['Development Projects', 'IT Projects', 'Building Processes'];
-
+ 
   return (
-    <section id="projects" className="pt-32 pb-20 bg-gradient-to-br from-purple-900 to-blue-900 text-white min-h-screen">
+    <section id="projects" className="py-32 bg-gradient-to-br from-purple-900 to-blue-900 text-white min-h-screen">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-10 text-white flex items-center justify-center">
-          <Rocket className="mr-2" /> Projects
-        </h1>
-        <p className="text-2xl italic text-center mb-6 text-white">
+        {/* Reduced Header Section */}
+        <h1 className="text-4xl font-bold text-center mb-4">🚀 Projects</h1>
+        <p className="text-lg italic text-center mb-4">
           Here you will find a wide array of projects that I have led, created, or played an important role in
         </p>
         
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="w-full flex mb-6 bg-white rounded-lg overflow-x-auto">
+          <TabsList className="w-full grid grid-cols-3 mb-4 bg-white rounded-lg overflow-hidden">
             {categories.map((category) => (
               <TabsTrigger 
                 key={category} 
                 value={category}
-                className="flex-1 py-2 px-4 text-[#5F3BB2] hover:bg-purple-100 data-[state=active]:bg-purple-200"
+                className="py-1.5 px-3 text-sm text-[#5F3BB2] hover:bg-purple-100 data-[state=active]:bg-purple-200"
               >
                 {category}
               </TabsTrigger>
             ))}
           </TabsList>
+
           {categories.map((category) => (
-            <TabsContent key={category} value={category}>
-              <ScrollArea className="h-[calc(100vh-300px)] w-full rounded-md pr-4">
-                <div className="space-y-6">
+            <TabsContent key={category} value={category} className="mt-0">
+              <ScrollArea className="h-[calc(100vh-180px)] w-full rounded-md">
+                <div className="space-y-3 pr-4">
                   {projectsData
                     .filter((project) => project.category === category)
                     .map((project, index) => (
-                      <Card key={index} className="overflow-hidden bg-gradient-to-br from-purple-800 to-blue-800 text-white border border-purple-300">
-                        <div className="flex flex-col md:flex-row">
-                          <div className="flex-grow p-6">
-                            <h3 className="text-xl font-semibold flex items-center mb-4">
-                              {project.icon || <FileText className="mr-2" />}
-                              {project.title}
+                      <Card 
+                        key={index} 
+                        className="bg-gradient-to-br from-purple-800 to-blue-800 text-white border border-purple-300"
+                      >
+                        <div className="flex flex-col md:flex-row md:min-h-[160px]">
+                          {/* Content Section */}
+                          <div className="flex-1 p-4">
+                            <h3 className="text-base font-semibold flex items-center gap-2 mb-2">
+                              <span className="w-5 h-5 flex-shrink-0">
+                                {project.icon || <FileText className="w-5 h-5" />}
+                              </span>
+                              <span>{project.title}</span>
                             </h3>
-                            <ul className="list-disc list-inside space-y-2 text-sm">
+                            <div className="space-y-1.5">
                               {project.details.map((detail, detailIndex) => (
-                                <li key={detailIndex}>{detail}</li>
+                                <p 
+                                  key={detailIndex} 
+                                  className="text-sm text-white/90 leading-relaxed"
+                                >
+                                  {detail}
+                                </p>
                               ))}
-                            </ul>
+                            </div>
                           </div>
+
+                          {/* Image Section */}
                           {project.image && (
-                            <div className="w-full md:w-1/3 p-4 relative h-48 md:h-auto">
-                              <Image 
-                                src={project.image} 
-                                alt={project.title} 
-                                layout="fill"
-                                objectFit="cover"
-                                className="rounded"
-                              />
+                            <div className="relative md:w-1/3 md:max-w-[300px]">
+                              <div className="h-[140px] md:h-full relative">
+                                <Image 
+                                  src={project.image} 
+                                  alt={project.title}
+                                  layout="fill"
+                                  objectFit="cover"
+                                  className="rounded-b-lg md:rounded-r-lg md:rounded-l-none"
+                                />
+                              </div>
                             </div>
                           )}
                         </div>

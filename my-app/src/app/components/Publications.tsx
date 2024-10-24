@@ -6,7 +6,7 @@ import { BookOpen, Presentation } from 'lucide-react';
 
 const Publications: React.FC = () => {
   return (
-    <section id="publications" className="py-20 pb-20 min-h-screen">
+    <section id="publications" className="py-32 pb-20 min-h-screen">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-10">📝 Publications</h1>
         <Tabs defaultValue="articles" className="w-full text-purple-900 data-[state=active]:bg-purple-100">

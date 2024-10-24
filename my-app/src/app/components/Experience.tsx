@@ -147,7 +147,7 @@ const experienceData: ExperienceData = {
 const Experience: React.FC = () => {
   const [activeTab, setActiveTab] = useState("DSK");
   return (
-    <section id="experience" className="py-20  bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300 ">
+    <section id="experience" className="py-32  bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300 ">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-10 text-white">Professional Experience</h1>        
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
