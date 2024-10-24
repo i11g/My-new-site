@@ -175,7 +175,8 @@ const Experience: React.FC = () => {
                         <div>
                           <h3 className="text-lg font-semibold">{exp.title}</h3>
                           <div className="text-sm text-green-500 flex items-center mt-0.5">
-                            <span className="mr-2">{exp.company}</span>
+                          <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+                           {exp.company}  </a>                          
                             <MapPin size={12} className="mr-1" />
                             <span>{exp.location}</span>
                           </div>
