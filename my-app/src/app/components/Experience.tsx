@@ -171,10 +171,10 @@ const Experience: React.FC = () => {
                   {experiences.map((exp, index) => (
                     <div key={index} className="bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300">
                       <div className="flex items-start gap-2 mb-2">
-                        <Briefcase className="text-[#B19CE0] flex-shrink-0 mt-1" size={20}/>
+                        <Briefcase className="text-yellow-500 flex-shrink-0 mt-1" size={20}/>
                         <div>
                           <h3 className="text-lg font-semibold">{exp.title}</h3>
-                          <div className="text-sm text-[#B19CE0] flex items-center mt-0.5">
+                          <div className="text-sm text-green-500 flex items-center mt-0.5">
                             <span className="mr-2">{exp.company}</span>
                             <MapPin size={12} className="mr-1" />
                             <span>{exp.location}</span>

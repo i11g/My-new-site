@@ -10,7 +10,8 @@ const About = () => {
         <Card className="bg-gradient-to-br from-purple-900 to-blue-900 text-white  border-2 border-purple-800">
           <CardContent>
             <p className="mb-4">
-            Welcome! My name is Ivan Georgiev, and I'm passionate about exploring different fields, ranging from project development and supramolecular chemistry to computer science and QA automation. This unique blend of interests allows me to approach challenges from multiple angles and drive innovation. 
+            Hi! My name is Ivan Georgiev, and I'm passionate about exploring different fields, ranging from project development and supramolecular chemistry to computer science and QA automation. 
+            This unique blend of interests allows me to approach challenges from multiple angles and drive innovation. 
             Recently, I started to utilize my knowledge of business processes and project development to build applications that transform workflows and enhance efficiency.
               </p>
             <p className="mb-4">
