@@ -149,7 +149,7 @@ const Experience: React.FC = () => {
   return (
     <section id="experience" className="py-32  bg-gradient-to-br from-purple-900 to-blue-900 text-white border border-purple-300 ">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-10 text-white">Professional Experience</h1>        
+        <h1 className="text-4xl font-bold text-center mb-10 text-white">👨‍💻 Professional Experience</h1>        
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="w-full flex mb-6 bg-white rounded-lg overflow-x-auto">
             {Object.keys(experienceData).map((company) => (
