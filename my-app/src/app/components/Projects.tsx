@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card } from '@/app/components/ui/card';
 import { ScrollArea } from '@/app/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app/components/ui/tabs';
-import { Rocket, Building, Archive, Warehouse, FileText, Github } from 'lucide-react';
+import { Rocket, Building, Archive, Warehouse, FileText,TestTube,ClipboardList, Github } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -19,18 +19,18 @@ type Project = {
 const projectsData: Project[] = [
   {
     title: "Workplace and Accomodation Strategy",
-    icon: <Building className="mr-2" />,
+    icon: <Building className="mr-2 text-yellow-500" />,
     details: [
       "Purpose: To develop a modern and flexible work environment that unifies all headquarters teams",
       "Scale: The project encompasses 13,800 square meters distributed across eight headquarters buildings, representing a major organizational and optimizational transformation.",
       "Focus: The workspace design prioritizes employee well-being, collaboration, and company culture through modern and flexible solutions that foster creativity, communication, and enhanced productivity.",
     ], 
-    image: "/images/workplace-project1.jpg",
+    image: "/images/workplace-project.jpg",
     category: "Development Projects"
   },
   {
     title: "Digital Factory Development",
-    icon: <Rocket className="mr-2" />,
+    icon: <Building className="mr-2 text-yellow-500"  />,
     details: [
       "Purpose: To create a modern workspace environment that enables effective collaboration and agile development practices for digital factory and retail banking teams",
       "Scale: The project encompasses 3,800 square meters",
@@ -41,9 +41,9 @@ const projectsData: Project[] = [
   },
   {
     title: "Construction of DSK Bank Centralized Warehouse",
-    icon: <Warehouse className="mr-2" />,
+    icon: <Warehouse className="mr-2 text-yellow-500" />,
     details: [
-      "Purpose: To develop a state-of-the-art automated warehouse facility designed for efficient storage and management of over 1,000,000 documents.",
+      "Purpose: To develop a state-of-the-art warehouse facility designed for efficient storage and management of over 1,000,000 documents.",
       "Scale: The project covers 2,700 square meters, strategically designed to maximize document storage and operational efficiency.",
       "Focus: The facility emphasizes modern document management systems and optimized storage solutions to maximazi storage capacity and ensure secure and accessible document archiving.",
     ],
@@ -52,7 +52,7 @@ const projectsData: Project[] = [
   },
   {
     title: "Centralization of DSK Bank archiving processes ",
-    icon: <Archive className="mr-2" />,
+    icon: <Archive className="mr-2 text-yellow-500" />,
     details: [
       "Purpose: To design and implement a centralized archive management system that streamlines document handling through digital transformation and process optimization.",  
       "Scale: The project encompasses the entire organization's archive management processes, focused on centralizing and standardizing documentation workflows.",
@@ -63,7 +63,7 @@ const projectsData: Project[] = [
   },
   {
     title: "Team leader in Odessos project as part of integration of DSK Bank and Express Bank ",
-    icon: <Archive className="mr-2" />,
+    icon: <Rocket className="mr-2 text-yellow-500" />,
     details: [
       "Purpose: To lead and execute the successful integration of DSK Bank and Express Bank through coordinated headquarters and unit relocations as part of the Odessos project.",  
       "Scale: The project encompasses the relocation and integration of multiple headquarters buildings and banking units, requiring careful coordination and planning.",
@@ -74,7 +74,7 @@ const projectsData: Project[] = [
   },
   {
     title: "Development and implementation of Centralized Procurement Processes and creation of Budget Responsible Departments ",
-    icon: <Archive className="mr-2" />,
+    icon: <ClipboardList className="mr-2 text-yellow-500" />,
     details: [
       "Purpose: To develop and implement centralized procurement processes while establishing Budget Responsible Departments to enhance financial control and transparency across the organization.",  
       "Scale: The project spans company-wide procurement and budget management processes, impacting all departments and establishing new organizational structures.",
@@ -85,7 +85,7 @@ const projectsData: Project[] = [
   },
   {
     title: "Office Space Application ",
-    icon: <Archive className="mr-2" />,
+    icon: <Building className="mr-2 text-yellow-500" />,
     details: [
      "Purpose: To develop an intuitive office space management application that streamlines and simplifies workplace administration and resource allocation.",
      "Focus: The app prioritizes user-friendly interface and efficient functionality to help users manage office spaces, track resources, and optimize workplace utilization with ease and effectiveness.",
@@ -97,7 +97,7 @@ const projectsData: Project[] = [
   },
   {
     title: "Real Estate Application ",
-    icon: <Archive className="mr-2" />,
+    icon: <Building className="mr-2 text-yellow-500" />,
     details: [
       "Purpose: To develop an integrated property management application that unifies space, real estate, investment projects, and facilities management in one comprehensive platform.",
       "Focus: The application streamlines property operations by integrating space utilization, real estate portfolio management, investment project tracking, and facilities maintenance into an one application",
@@ -108,10 +108,10 @@ const projectsData: Project[] = [
   },
   {
     title: "My QA Automation Projects",
-    icon: <Archive className="mr-2" />,
+    icon: <TestTube className="mr-2 text-yellow-500" />,
     details: [
       "Focus: The projects showcase practical implementation of QA automation techniques, testing frameworks, and best practices, through a collection of projects developed during my SoftUni coursework and projects", 
-      "Link : "
+      
 
     ], 
     image: "",
@@ -162,11 +162,18 @@ const Projects: React.FC = () => {
                           <div className="flex-1 p-4">
                             <h3 className="text-base font-semibold flex items-center gap-2 mb-2">
                               <span className="w-5 h-5 flex-shrink-0">
-                                {project.icon || <FileText className="w-5 h-5" />}
+                                {project.icon || <FileText className="text-yellow-500 w-5 h-5"  />}
                               </span>
-                              <span>{project.title}</span>                      
-            
-
+                              <span>{project.title}</span>                
+                             {project.githubLink && (
+                      <Link 
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center ml-2 text-purple-300 hover:text-white transition-colors"
+                      >
+                        <Github className="w-6 h-6" />
+                      </Link> )} 
 
                             </h3>
                             <div className="space-y-1.5">
@@ -175,32 +182,13 @@ const Projects: React.FC = () => {
                                   key={detailIndex} 
                                   className="text-sm text-white/90 leading-relaxed"
                                 >
-                                  {detail} 
-
-                                  {detail === "Link :" && project.githubLink && (
-                      <Link 
-                        href={project.githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center ml-2 text-purple-300 hover:text-white transition-colors"
-                      >
-                        <Github className="w-5 h-5" />
-                      </Link>
-                    )}
+                                  {detail}                               
+                  
                                 </p>
                               ))}
-                              {project.githubLink && (
-            <Link 
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-6 text-purple-300 hover:text-white transition-colors"
-            >
-              <Github className="w-8 h-8" />
-            </Link> )} 
+             
                             </div>
                           </div>
-
                           {/* Image Section */}
                           {project.image && (
                             <div className="relative md:w-1/3 md:max-w-[300px]">
@@ -208,9 +196,9 @@ const Projects: React.FC = () => {
                                 <Image 
                                   src={project.image} 
                                   alt={project.title}
-                                  layout="fill"
-                                  objectFit="cover"
-                                  className="rounded-b-lg md:rounded-r-lg md:rounded-l-none"
+                                  fill
+                                  className="rounded-b-lg md:rounded-r-lg md:rounded-l-none object-cover"
+                                  sizes="(max-width: 768px) 100vw, 300px"
                                 />
                               </div>
                             </div>

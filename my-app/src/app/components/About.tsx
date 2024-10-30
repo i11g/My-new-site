@@ -20,9 +20,9 @@ const About = () => {
             <p className="mb-4">
               I&apos;m constantly learning and adapting to new technologies, always looking for ways to improve processes and deliver high-quality projects.
             </p>
-            <Button className="bg-white text-purple-600 hover:bg-purple-100 hover:text-purple-700">
+            {/* <Button className="bg-white text-purple-600 hover:bg-purple-100 hover:text-purple-700">
               Download CV
-            </Button>
+            </Button> */}
           </CardContent>
         </Card>
       </div>
