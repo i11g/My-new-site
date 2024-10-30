@@ -19,11 +19,10 @@ const projectsData: Project[] = [
     title: "Workplace and Accomodation Strategy",
     icon: <Building className="mr-2" />,
     details: [
-      "Focus: Development of new modern and flexible work environment for all HQ teams",
-      "Net Area: 13,800 sq.m., spanning across four HQ buildings",
-      "Ongoing",
-      "The project aims to enhance employee well-being and productivity by providing modern design elements and flexible workspaces, to foster collaboration, creativity, and a strong sense of community among team members.This initiative will not only improve work efficiency but also strengthen the company's identity and culture."
-    ],
+      "Purpose: To develop a modern and flexible work environment that unifies all headquarters teams",
+      "Scale: The project encompasses 13,800 square meters distributed across eight headquarters buildings, representing a major organizational and optimizational transformation.",
+      "Focus: The workspace design prioritizes employee well-being, collaboration, and company culture through modern and flexible solutions that foster creativity, communication, and enhanced productivity.",
+    ], 
     image: "/images/workplace-project1.jpg",
     category: "Development Projects"
   },
@@ -31,9 +30,9 @@ const projectsData: Project[] = [
     title: "Digital Factory Development",
     icon: <Rocket className="mr-2" />,
     details: [
-      "Objective: Creation of comfortable and modern office environment with identity and flexibility for agile development teams and tribes",
-      "Number of FTE: 500",
-      "Reconstructed Area: 3,800 sq.m."
+      "Purpose: To create a modern workspace environment that enables effective collaboration and agile development practices for digital factory and retail banking teams",
+      "Scale: The project encompasses 3,800 square meters",
+      "Focus: The project working zones focus on  flexibility and employee comfort while incorporating essential elements for agile methodology, such as collaboration spaces and adaptable work zones.",
     ],
     image: "/images/digital-factory.jpg",
     category: "Development Projects"
@@ -42,8 +41,9 @@ const projectsData: Project[] = [
     title: "Construction of DSK Bank Centralized Warehouse",
     icon: <Warehouse className="mr-2" />,
     details: [
-      "Project Scope: Development of modern and automated central warehouse for close to 800,000 documents",
-      "Development Area:  Office part for 30 FTE starting and total are of 2,700 sq.m."
+      "Purpose: To develop a state-of-the-art automated warehouse facility designed for efficient storage and management of over 1,000,000 documents.",
+      "Scale: The project covers 2,700 square meters, strategically designed to maximize document storage and operational efficiency.",
+      "Focus: The facility emphasizes modern document management systems and optimized storage solutions to maximazi storage capacity and ensure secure and accessible document archiving.",
     ],
     image: "",
     category: "Development Projects"
@@ -52,8 +52,8 @@ const projectsData: Project[] = [
     title: "Centralization of DSK Bank archiving processes ",
     icon: <Archive className="mr-2" />,
     details: [
-      "Objective: Design and implementation of centralized process for archive management aiming process optimization, digitalization, and efficiency",  
-      "Project Goals: Development of centralized process of archive management"
+      "Purpose: To design and implement a centralized archive management system that streamlines document handling through digital transformation and process optimization.",  
+      "Objective: Development of centralized process of archive management"
     ],
     image: "",
     category: "Building Processes"
