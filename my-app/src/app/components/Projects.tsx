@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import { Card } from '@/app/components/ui/card';
 import { ScrollArea } from '@/app/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app/components/ui/tabs';
-import { Rocket, Building, Archive, Warehouse, FileText } from 'lucide-react';
+import { Rocket, Building, Archive, Warehouse, FileText, Github } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type Project = {
   title: string;
@@ -12,6 +13,7 @@ type Project = {
   details: string[];
   image: string;
   category: 'Development Projects' | 'IT Projects' | 'Building Processes';
+  githubLink?: string;
 };
 
 const projectsData: Project[] = [
@@ -53,7 +55,8 @@ const projectsData: Project[] = [
     icon: <Archive className="mr-2" />,
     details: [
       "Purpose: To design and implement a centralized archive management system that streamlines document handling through digital transformation and process optimization.",  
-      "Objective: Development of centralized process of archive management"
+      "Scale: The project encompasses the entire organization's archive management processes, focused on centralizing and standardizing documentation workflows.",
+      "Focus: The initiative prioritizes efficiency through digitalization, implementing modern archive management solutions that optimize processes, reduce manual handling, and improve accessibility of archived materials.",
     ],
     image: "",
     category: "Building Processes"
@@ -62,8 +65,9 @@ const projectsData: Project[] = [
     title: "Team leader in Odessos project as part of integration of DSK Bank and Express Bank ",
     icon: <Archive className="mr-2" />,
     details: [
-      "Objective: Leading the integration of HQ&apos;s buildings and units&apos relocations.",  
-      "Project Goals: Succsessul units relocation "
+      "Purpose: To lead and execute the successful integration of DSK Bank and Express Bank through coordinated headquarters and unit relocations as part of the Odessos project.",  
+      "Scale: The project encompasses the relocation and integration of multiple headquarters buildings and banking units, requiring careful coordination and planning.",
+      "Focus: The initiative prioritizes seamless relocation of teams and units while maintaining operational continuity, ensuring minimal disruption to banking services during the integration process.",
     ],
         image: "",
     category: "Building Processes"
@@ -72,17 +76,19 @@ const projectsData: Project[] = [
     title: "Development and implementation of Centralized Procurement Processes and creation of Budget Responsible Departments ",
     icon: <Archive className="mr-2" />,
     details: [
-      "Objective: Creation of centralized and transparent processes for procurement and assets management.",  
-      "Objective: Development of budget management processes on a company level driven by budget responsible departments",  
+      "Purpose: To develop and implement centralized procurement processes while establishing Budget Responsible Departments to enhance financial control and transparency across the organization.",  
+      "Scale: The project spans company-wide procurement and budget management processes, impacting all departments and establishing new organizational structures.",
+      "Focus: The initiative emphasizes creating transparent procurement procedures and empowering budget responsible departments to effectively manage assets and financial resources at both departmental and company-wide levels.",  
     ],
     image: "",
     category: "Building Processes"
   },
   {
-    title: "Office Space App ",
+    title: "Office Space Application ",
     icon: <Archive className="mr-2" />,
     details: [
-      "Office space app gives you the tool to manage all of your office space with easy",
+     "Purpose: To develop an intuitive office space management application that streamlines and simplifies workplace administration and resource allocation.",
+     "Focus: The app prioritizes user-friendly interface and efficient functionality to help users manage office spaces, track resources, and optimize workplace utilization with ease and effectiveness.",
       "currently building"  
         
     ],
@@ -93,30 +99,24 @@ const projectsData: Project[] = [
     title: "Real Estate Application ",
     icon: <Archive className="mr-2" />,
     details: [
-      "real Estate App ",  
-      "currently building",  
+      "Purpose: To develop an integrated property management application that unifies space, real estate, investment projects, and facilities management in one comprehensive platform.",
+      "Focus: The application streamlines property operations by integrating space utilization, real estate portfolio management, investment project tracking, and facilities maintenance into an one application",
+      "currentlly building",
     ],
     image: "/images/Property.jpg",
-    category: "IT Projects"
-  },
-  {
-    title: "My previous personal page",
-    icon: <Archive className="mr-2" />,
-    details: [
-      "Portfolio page made wiht markdown and Ruby",  
-       
-    ],
-    image: "",
     category: "IT Projects"
   },
   {
     title: "My QA Automation Projects",
     icon: <Archive className="mr-2" />,
     details: [
-      "All of my QA automation projects during my study at SoftUni are in i11g",         
-    ],
+      "Focus: The projects showcase practical implementation of QA automation techniques, testing frameworks, and best practices, through a collection of projects developed during my SoftUni coursework and projects", 
+      "Link : "
+
+    ], 
     image: "",
-    category: "IT Projects"
+    category: "IT Projects",
+    githubLink: "https://github.com/i11g",
   },
 ];
 
@@ -164,7 +164,10 @@ const Projects: React.FC = () => {
                               <span className="w-5 h-5 flex-shrink-0">
                                 {project.icon || <FileText className="w-5 h-5" />}
                               </span>
-                              <span>{project.title}</span>
+                              <span>{project.title}</span>                      
+            
+
+
                             </h3>
                             <div className="space-y-1.5">
                               {project.details.map((detail, detailIndex) => (
@@ -172,9 +175,29 @@ const Projects: React.FC = () => {
                                   key={detailIndex} 
                                   className="text-sm text-white/90 leading-relaxed"
                                 >
-                                  {detail}
+                                  {detail} 
+
+                                  {detail === "Link :" && project.githubLink && (
+                      <Link 
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center ml-2 text-purple-300 hover:text-white transition-colors"
+                      >
+                        <Github className="w-5 h-5" />
+                      </Link>
+                    )}
                                 </p>
                               ))}
+                              {project.githubLink && (
+            <Link 
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-6 text-purple-300 hover:text-white transition-colors"
+            >
+              <Github className="w-8 h-8" />
+            </Link> )} 
                             </div>
                           </div>
 
