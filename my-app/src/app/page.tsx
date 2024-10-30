@@ -58,18 +58,15 @@ const HomePage = () => {
           {/* Social Icons */}
 
           <div className="flex justify-center items-center space-x-8 opacity-0 animate-fade-in animation-delay-4500 mt-28">
-            <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-all duration-300 ease-in-out">
+            <a href="https://www.linkedin.com/in/ivan-georgiev-7a97151b7" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-all duration-300 ease-in-out">
               <Linkedin size={24} />
             </a>
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-all duration-300 ease-in-out">
+            <a href="https://github.com/i11g" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-all duration-300 ease-in-out">
               <Github size={24} />
-            </a>
-            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-300 transition-all duration-300 ease-in-out">
-              <Twitter size={24} />
-            </a>
-            <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-400 transition-all duration-300 ease-in-out">
+            </a>            
+           {/*<a href="https://www.instagram.com/vangeorgiev722" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-400 transition-all duration-300 ease-in-out">
               <Instagram size={24} />
-            </a>
+            </a>*/}
           </div>
         </div>
       </section>

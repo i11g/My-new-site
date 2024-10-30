@@ -17,7 +17,7 @@ const Header = () => {
             />
             <div>
               <h1 className="text-2xl font-bold">Ivan Georgiev</h1>
-              <p className="text-sm text-gray-600">Product Engineer | QA Automation Specialist</p>
+              <p className="text-sm text-gray-600">Project Development | Processes Optimization</p>
             </div>
           </div>
           <nav>
