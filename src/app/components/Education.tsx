@@ -26,7 +26,7 @@ const Education = () => {
       area: "Insurance and Social Security Management",
       university: "VUZF University",
       universityUrl: "https://vuzf.edu/",
-      period: "2008 - 20011"
+      period: "2008 - 2011"
     },
     {
       degree: "M.S. in Organic Shemistry",
