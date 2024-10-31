@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { Linkedin, Github, Twitter, Instagram } from 'lucide-react';
+import { Linkedin, Github } from 'lucide-react';
 import About from '@/app/components/About';
 import Experience from '@/app/components/Experience';
 import Projects from '@/app/components/Projects';
