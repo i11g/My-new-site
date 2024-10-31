@@ -71,10 +71,8 @@ const HomePage = () => {
             </a>
             <a href="https://github.com/i11g" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-all duration-300 ease-in-out">
               <Github size={24} />
-            </a>            
-           {/*<a href="https://www.instagram.com/vangeorgiev722" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-400 transition-all duration-300 ease-in-out">
-              <Instagram size={24} />
-            </a>*/}
+            </a>           
+           
           </div>
         </div>
       </section>
