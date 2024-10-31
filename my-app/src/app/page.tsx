@@ -6,6 +6,12 @@ import Experience from '@/app/components/Experience';
 import Projects from '@/app/components/Projects';
 import Education from '@/app/components/Education';
 import Publications from '@/app/components/Publications';
+import { Dancing_Script } from 'next/font/google'
+
+const dancingScript = Dancing_Script({
+  subsets: ['latin'],
+  weight: '400',
+})
 
 const HomePage = () => {
   const [text, setText] = useState('');
@@ -23,7 +29,7 @@ const HomePage = () => {
       }, 20);
 
       return () => clearInterval(typingTimer);
-    }, 800);
+    }, 600);
 
     return () => clearTimeout(timer);
   }, []);
@@ -36,11 +42,13 @@ const HomePage = () => {
           <h1 className="text-7xl font-bold mb-6 animate-fade-in-down">
             Hey, I&apos;m Ivan.
           </h1>
-          <h2 className="text-4xl mb-10 relative h-[1.5em] italic">
-            <span className="absolute left-0 right-0 overflow-hidden whitespace-nowrap handwriting-animation">
+          <h2 className="text-[3rem] mb-12 relative h-[1.5em] italic">
+            <span className={`absolute left-0 right-0 overflow-hidden whitespace-nowrap ${dancingScript.className}`}>
               {text}
             </span>
-            <span className="invisible">{fullText}</span>
+            <span className={`invisible ${dancingScript.className}`}>
+              {fullText}
+            </span>
           </h2>
           
           <p className="text-2xl mb-8 opacity-0 animate-fade-in animation-delay-4000">
@@ -51,7 +59,7 @@ const HomePage = () => {
             Building big ideas that make impact.
           </p>
           
-          <a href="#projects" className="bg-green-500 text-purple-900 px-16 py-4 rounded-full font-semibold text-lg hover:bg-green-600 transition-all duration-300 mb-8 inline-block opacity-0 animate-fade-in animation-delay-4250">
+          <a href="#projects" className="bg-green-500 text-purple-900 px-16 py-4 rounded-full font-semibold text-lg hover:bg-green-600 transition-all duration-300 mb-8 inline-block opacity-0 animate-fade-in animation-delay-4250" style={{ marginTop: '20px' }}>
             Projects
           </a>
           

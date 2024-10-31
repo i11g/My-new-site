@@ -12,10 +12,10 @@ const Publications: React.FC = () => {
         <Tabs defaultValue="articles" className="w-full text-purple-900 data-[state=active]:bg-purple-100">
           <TabsList className="grid w-full grid-cols-2 text-purple-900 data-[state=active]:bg-purple-100">
             <TabsTrigger value="articles" className="flex items-center text-purple-900 data-[state=active]:bg-purple-100">
-              <BookOpen className="mr-2" />Book Chapters & Articles
+              <BookOpen className="mr-2 text-yellow-500" />Book Chapters & Articles
             </TabsTrigger>
             <TabsTrigger value="presentations" className="flex items-center text-purple-900 data-[state=active]:bg-purple-100">
-              <Presentation className="mr-2" />Presentations
+              <Presentation className="mr-2 text-yellow-500" />Presentations
             </TabsTrigger>
           </TabsList>
 
@@ -26,6 +26,8 @@ const Publications: React.FC = () => {
                 <ScrollArea className="h-[calc(100vh-300px)] w-full rounded-md border p-4">
                   <div className="space-y-6">
                     <div>
+                      <h3 className="text-lg font-semibold">My Google Scholar Profile</h3>
+                      <a href="https://scholar.google.com/citations?user=H_WL_wUAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://scholar.google.com/citations?user=01337744236994447333&hl=en</a>
                       <h3 className="text-lg font-semibold">Book Chapter</h3>
                       <p className="mt-2">&quot;Metal-organic frameworks with photochemical building units&quot;, in <em>Metal-Organic Frameworks: Design and Application</em>, Wiley-VCH, 2011, 301-312; Sumrak, J.C.; Georgiev, I.G.; MacGillivray, L.R.</p>
                     </div>
